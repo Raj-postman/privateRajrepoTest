@@ -1,0 +1,137 @@
+<Assertion ID="_887b394f-5de1-445b-9b5f-a129c669c70c" IssueInstant="2019-09-16T14:21:10.334Z" Version="2.0"
+    xmlns="urn:oasis:names:tc:SAML:2.0:assertion">
+    <Issuer>http://esafarm02-jxchange.jha-sys.com/adfs/services/trust</Issuer>
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:SignedInfo>
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <ds:Reference URI="#_887b394f-5de1-445b-9b5f-a129c669c70c">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </ds:Transforms>
+                <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <ds:DigestValue>HOLLxUIirudFsBZUXwMK/pONlxIpxhv7QkxWRhrzzsw=</ds:DigestValue>
+            </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue>IWlcYnXcxypO6gUKkJcFi13je14rbY6cAwcPCIY/pGPKh5lyDwu16Nr8abpexDkKf9UguBrDqEXYvCNnY+Y4AlePs6RHMohU1nGZmel2jzYbAWiOjDmLxi9k1ajRvBu0pDPaLAPyUcjMdRbCGvz6BpggMH/hVE68/eswb0AStKQKpV4MZOrkZxWriqXu29OdlAvTYSr3uW0NHS6JlLgkW4BRJY6Vt/eP82TlL4rnD9+pI//W8HsH5Q0CV0zBYDMoAP14qyMd26QU6SFpFvXgEE5i32VoBpnJ0x7sc+mP+IrayU91HY6iUtUEJlYBAEVdRKCXKIWiogHQ5JOizx+oEQ==</ds:SignatureValue>
+        <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <ds:X509Data>
+                <ds:X509Certificate>MIIFwzCCBKugAwIBAgITbAAACHhW0nM3O5BgXQAAAAAIeDANBgkqhkiG9w0BAQsFADBHMRMwEQYKCZImiZPyLGQBGRYDamhhMRMwEQYKCZImiZPyLGQBGRYDZGV2MRswGQYDVQQDExJFVFNCTU9EVlBLSUNBMDItQ0EwHhcNMTcwOTIxMjAxNTM5WhcNMjAwOTIwMjAxNTM5WjAnMSUwIwYDVQQDExxTaWduaW5nLWp4Y2hhbmdlLmpoYS1zeXMuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmmHQb5g7GlE/PpZlR3f8bBdWgSh3SR3f1SYiEFTrOJlvFlwrz7eL3IQNfaGviQFGu2aAT/hZU3SnsfQgJm+VdjYakHg7e7juB1NOQu30X+zPoTsoKjq1osLU8n1gyCBwWeK00NozHNeWfRGWb9TsDUQ91tG0njMKygceSETUP2lkdv9Q6pVXp9gqnTy/j6MBL/Qkq41ejzN/MTtX7EMl0thqJpehciIvZ9mXkD56dkaRci50TtEqT6zBcAlcv4N8teRst7QuspySsW4wmHIIY+zdC7hgYIzCQkNeVs+ejxSH9poqqJyGffC9taZtu9zEgiKq3jLoTGWP73DOFL0YuQIDAQABo4ICxjCCAsIwCwYDVR0PBAQDAgWgMDwGCSsGAQQBgjcVBwQvMC0GJSsGAQQBgjcVCIT02RGE54UXhr2bHIOltBuG56JMecOqDYaKuzICAWQCAQ8wHQYDVR0OBBYEFCahLwvUlqT7j3Ht7Y0XxU5qPO1pMB8GA1UdIwQYMBaAFHhVgKx7Si104kq3zQbJBbqdKHfzMIG/BgNVHR8EgbcwgbQwgbGgga6ggauGOWh0dHA6Ly9FVFNCTU9EVlBLSUNBMDIuREVWLkpIQS9DRFAvRVRTQk1PRFZQS0lDQTAyLUNBLmNybIY2aHR0cDovL01NT01OUEtJQ1JMLmpraHkuY29tL0NEUC9FVFNCTU9EVlBLSUNBMDItQ0EuY3JshjZodHRwOi8vQk1PTU5QS0lDUkwuamtoeS5jb20vQ0RQL0VUU0JNT0RWUEtJQ0EwMi1DQS5jcmwwggEpBggrBgEFBQcBAQSCARswggEXMF0GCCsGAQUFBzAChlFodHRwOi8vRVRTQk1PRFZQS0lDQTAyLkRFVi5KSEEvQ0RQL0VUU0JNT0RWUEtJQ0EwMi5kZXYuamhhX0VUU0JNT0RWUEtJQ0EwMi1DQS5jcnQwWgYIKwYBBQUHMAKGTmh0dHA6Ly9NTU9NTlBLSUNSTC5qa2h5LmNvbS9DRFAvRVRTQk1PRFZQS0lDQTAyLmRldi5qaGFfRVRTQk1PRFZQS0lDQTAyLUNBLmNydDBaBggrBgEFBQcwAoZOaHR0cDovL0JNT01OUEtJQ1JMLmpraHkuY29tL0NEUC9FVFNCTU9EVlBLSUNBMDIuZGV2LmpoYV9FVFNCTU9EVlBLSUNBMDItQ0EuY3J0MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAnBgkrBgEEAYI3FQoEGjAYMAoGCCsGAQUFBwMCMAoGCCsGAQUFBwMBMA0GCSqGSIb3DQEBCwUAA4IBAQCfWFL0ORdiwuB+8ng4Q212GjLr/0ULcdHPoVJ/fTRBxgS8XxG9O4GE5BdH3oo6/JwiBbDIPEjl4r85gR2BeI8zm/cxllQl76JL55cHt3UTUjozjgS19j6AEdtq0+tNC/SpZce6R+Iy6XzFmgxA56aakSVYznfZO8MXXOfYPdMCnh+zS8MQJqIX8Iwil21w325c90V6Sd+uJpmgZ79cHrS8SsPUwhBBmbrIJAdQ9x0Xr27pVtoaNsQXMJquRN7MjohRZZOWqGtUaB+q9SG7pv4pMmlyEdbC6b5VAgoyHiLchMPTy6mQsfFBanaAj2PpN7PURY+7vtDsHBC8YGI+Mzf6</ds:X509Certificate>
+            </ds:X509Data>
+        </KeyInfo>
+    </ds:Signature>
+    <Subject>
+        <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key">
+            <SubjectConfirmationData a:type="KeyInfoConfirmationDataType"
+                xmlns:a="http://www.w3.org/2001/XMLSchema-instance">
+                <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+                    <e:EncryptedKey xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+                        <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p">
+                            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                        </e:EncryptionMethod>
+                        <KeyInfo>
+                            <ds:X509Data xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                                <ds:X509IssuerSerial>
+                                    <ds:X509IssuerName>CN=ETSBMODVPKICA02-CA, DC=dev, DC=jha</ds:X509IssuerName>
+                                    <ds:X509SerialNumber>2408480492693134658746626249539331296136792183</ds:X509SerialNumber>
+                                </ds:X509IssuerSerial>
+                            </ds:X509Data>
+                        </KeyInfo>
+                        <e:CipherData>
+                            <e:CipherValue>Fv4udcq82S7hc3VNPUyfYM/EhUyGcid1E9tAQfAzZhkByHP504lwIFzgL4ZL3NDVFg0FnCeGlcNGEHybofvK92qHfkAAJRLz52XBevxf0twiYOOa5uj9KyI0OQ3MPSvhpJPm9Dt9POoccr/iWk3bNyk7SE8LJFHYPI3IVf6KDyJWoD+FUP17PqODtXCu4oxH+xCqP7OM8jJekJTk6WH9LM5P8Fh7vutL8PjB8v2J5AFHEVgvmDSYV72zdzl/nU8vhDcj7PQ7+iTNQaOzW7E54cSHljsStvQIJ2OZsBryq1wABGmHQ1IZwZIBCa2W/FDeERNnr+6sSYWkeYLTkN8FjA==</e:CipherValue>
+                        </e:CipherData>
+                    </e:EncryptedKey>
+                </KeyInfo>
+            </SubjectConfirmationData>
+        </SubjectConfirmation>
+    </Subject>
+    <Conditions NotBefore="2019-09-16T14:21:10.318Z" NotOnOrAfter="2019-09-17T02:21:10.318Z">
+        <AudienceRestriction>
+            <Audience>http://jackhenry.com/application/xperience</Audience>
+        </AudienceRestriction>
+    </Conditions>
+    <AttributeStatement>
+        <Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname">
+            <AttributeValue>JHADEV\tgallup</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn">
+            <AttributeValue>tgallup@dev.jha</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
+            <AttributeValue>tgallup@dev.jha</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid">
+            <AttributeValue>S-1-5-21-2715949101-717098633-594934343-63960</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
+            <AttributeValue>tgallup@jackhenry.com</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">
+            <AttributeValue>TestXpUsers</AttributeValue>
+            <AttributeValue>TestXpUsers3</AttributeValue>
+            <AttributeValue>EIS GA JMC Admins</AttributeValue>
+            <AttributeValue>Optimizer1000</AttributeValue>
+            <AttributeValue>Optimizer500</AttributeValue>
+            <AttributeValue>Domain Users</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/alias">
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;636d21b3-f459-4330-8109-cc032cf5e143&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;I just changed the desc.&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;90267222&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;4694ddc2-bfa3-44e7-b1e0-b5589bedba23&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;79080826&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;71baccd1-3383-494c-98cd-a21423d3f67b&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;91399315&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;2bda2589-5719-4e5d-8ce1-67b7de3f1062&lt;/UniqueId&gt;&lt;AppliesToApp&gt;http://jackhenry.com/application/SampleXpProduct&lt;/AppliesToApp&gt;&lt;Alias&gt;5d82f2e6-4344-41fb-b4ec-86bfc378bc2c&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;generic&lt;/AliasDesc&gt;&lt;AliasContext&gt;test&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;12345678&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;1266bc0f-24e5-400b-b947-69adeb98c671&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;58774843&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;b5e1c4dc-546b-4d83-b4a7-124d2fbd5064&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;49093723&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;2d3a187d-8351-43a4-b110-5974c0e67af3&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;22900276&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;bd0c31d5-3533-4bc2-9b23-73befdf33ecd&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;66474728&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;b1d708be-6eef-426e-b49b-1c40b4de478b&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;93248449&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;0f71269c-6846-4060-91ab-786a73fdb72d&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;39763172&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;36bf5426-e504-4fd4-ab0a-6ea5321ae2b7&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;76745431&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;508f3a59-f62e-42f0-9ee0-5cda43ffdb3b&lt;/UniqueId&gt;&lt;AppliesToApp&gt;OnBoard-depositsrls&lt;/AppliesToApp&gt;&lt;Alias&gt;admin&lt;/Alias&gt;&lt;AliasDft&gt;true&lt;/AliasDft&gt;&lt;AliasDesc&gt;OnBoard User Account&lt;/AliasDesc&gt;&lt;AliasContext&gt;Database Name&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;JackHenryOnBoardInstitution&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;7fb46f97-f93e-41a4-a791-4a77532190d6&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;95473309&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;5b1c81a8-e447-4f69-9404-3b1eeba2d6e2&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;56531287&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;74a3fb20-40b4-4471-859a-2b5a524c9cc6&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;I just changed the desc.&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;87723389&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;70940d4a-6210-4ac0-b374-b669197a06f0&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;62333286&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;05ecc61a-8bc3-4d7a-b216-4b0639140c35&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;40129700&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;1bf1c645-e950-427d-a849-ac171836d6a8&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;I just changed the desc.&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;85549362&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;a7224ab0-7d7d-448c-beaa-aa9f9a152f40&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;33375601&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;9dae962b-f8c1-44eb-9280-e78d2658406f&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;82602751&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+            <AttributeValue>&lt;AliasClaimRec&gt;&lt;UniqueId&gt;e17b3fa8-2606-4311-bdf9-1ca4004fb24b&lt;/UniqueId&gt;&lt;AppliesToApp&gt;Demo&lt;/AppliesToApp&gt;&lt;Alias&gt;tgallup&lt;/Alias&gt;&lt;AliasDft&gt;false&lt;/AliasDft&gt;&lt;AliasDesc&gt;Demo Testing&lt;/AliasDesc&gt;&lt;AliasContext&gt;iAdapter=techserv;&lt;/AliasContext&gt;&lt;AliasInstRtId&gt;12192748&lt;/AliasInstRtId&gt;&lt;/AliasClaimRec&gt;</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/policy/claims/maximumpasswordage">
+            <AttributeValue>-77760000000000</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/passwordchangeddate">
+            <AttributeValue>130858523820472942</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/useraccountcontrol">
+            <AttributeValue>66048</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/userdn">
+            <AttributeValue>CN=Tom Gallup,OU=users,OU=Xperience,OU=Development Groups,DC=dev,DC=jha</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/emptitle">
+            <AttributeValue>Developer</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/deptdesc">
+            <AttributeValue>Xperience Framework Development</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.jackhenry.com/ims/2010/identity/claims/desc">
+            <AttributeValue>Test Description</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">
+            <AttributeValue>Tom</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
+            <AttributeValue>Gallup</AttributeValue>
+        </Attribute>
+        <Attribute Name="http://schemas.xmlsoap.org/claims/CommonName">
+            <AttributeValue>Tom Gallup</AttributeValue>
+        </Attribute>
+    </AttributeStatement>
+    <AuthnStatement AuthnInstant="2019-09-16T14:21:10.316Z">
+        <AuthnContext>
+            <AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+        </AuthnContext>
+    </AuthnStatement>
+</Assertion>
