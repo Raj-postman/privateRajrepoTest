@@ -1,0 +1,86 @@
+BadRequest:
+  description: 'Bad Request<hr>
+            The server could not understand the request due to invalid syntax.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+    X-Messages:
+      $ref: './Headers.v1.yaml#/X-Messages'
+    X-BusinessCorrelationId:
+      $ref: './Headers.v1.yaml#/X-BusinessCorrelationId'
+    X-WorkflowCorrelationId:
+      $ref: './Headers.v1.yaml#/X-WorkflowCorrelationId'
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/ComplexDictionary.v1.json#/definitions/MessageStatus'
+Unauthorized:
+  description: 'Unauthorized<hr>
+            Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". 
+            That is, the client must authenticate itself to get the requested response.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+Forbidden:
+  description: 'Forbidden<hr>
+            The client does not have access rights to the content; that is, it is unauthorized, 
+            so the server is refusing to give the requested resource. Unlike 401, the clients identity is known to the server.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+NotFound:
+  description: 'Not Found<hr>
+            The server can not find the requested resource. In an API, this can also mean that the endpoint is valid but 
+            the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence 
+            of a resource from an unauthorized client.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+RequestTooLarge:
+  description: 'Request Too Large<hr>
+            Request entity is larger than limits defined by server.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+Unprocessed:
+  description: 'Unprocessed<hr>
+            The request was well-formed but was unable to be followed due to semantic errors.'
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+NotModified:
+  description: Not Modified
+  headers:
+    X-Request-ID:
+      $ref: './Headers.v1.yaml#/X-Request-ID'
+    X-Correlation-ID:
+      $ref: './Headers.v1.yaml#/X-Correlation-ID'
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/ComplexDictionary.v1.json#/definitions/MessageStatus'
+GenericInternalError:
+  description: 'Generic Internal Error<hr>
+            The server has encountered a situation it does not know how to handle.'
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/ComplexDictionary.v1.json#/definitions/MessageStatus'
+UnexpectedError:
+  description: Unexpected error
+  content:
+    application/json:
+      schema:
+        $ref: '../schemas/ComplexDictionary.v1.json#/definitions/MessageStatus'

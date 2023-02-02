@@ -1,0 +1,53 @@
+X-Request-ID:
+  description: 'To support communications level correlation due to some responses only having header data, a round-trip identifier (GUID) will be sent on every call from the consumer and returned by the service provider (or intermediary) regardless of the final disposition of the request/message.'
+  required: true
+  schema:
+    type: string
+    format: uuid
+    example: 123e4567-e89b-12d3-a456-426655440000
+X-Correlation-ID:
+  description: To support communications level tracking between the source and final destinations, a unique round-trip identifier (GUID) will be sent on every call from the caller and returned in the response by the service providers regardless of the final disposition of the request/message. The x-correlation-id can be re-used by intermediaries and/or service-providers to communicate beyond themselves indicating that the calls THEY are making are part of the same original message. (i.e. they are correlated) 
+  required: true
+  schema:
+    type: string
+    format: uuid
+    example: 123e4567-e89b-12d3-a456-426655440000
+X-Messages:
+  description: Indicating messages/faults/errors returned
+  schema:
+    type: boolean
+    default: false
+X-BusinessCorrelationId:
+  description: The correlation identification as related to business functions and  activities.  Generally expected to be a GUID.
+  schema:
+    type: string
+X-WorkflowCorrelationId:
+  description: The correlation identification as related to workflow functions and activities. Generally expected to be a GUID.
+  schema:
+    type: string
+X-MessageSource:
+  description: The source of the response to a message.  This would represent the service provider that carry out the business service for the message
+  schema:
+    type: string 
+ETag:
+  description: 'Entity tag used for web cache validation.  It provides a mechanism to cache unchanged resources.'
+  schema:
+    type: string
+    default: application/json
+If-Match:
+  name: If-Match
+  in: header
+  description: 'Enables optimistic updating with ETag'
+  required: true
+  schema:
+    type: string
+    example: '{echo etag}'
+Digest:
+  description: Http header supported digest algorithms and corresponding value. Syntax <digest-algorithm>=<digest-value> as calculated by the server
+  schema:
+    type: string 
+ 
+X-Version:  
+  description: Indicating version for the management status service
+  schema:
+    type: string
