@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "GenericTitle",
+    "description": "GenericDescription",
+    "additionalProperties": false,
+    "type": "object",
+    "definitions": {
+        "PlaceholderId": {
+            "type": "object",
+            "properties": {
+                "PlaceholderId": {
+                    "description": "Placeholder Id - Key - an instance of a placeholder entry",
+                    "type": "string",
+                    "examples": [
+                        "22222222-5717-4562-b3fc-2c963f66afa6"
+                    ],
+                    "format": "uuid"
+                }
+            },
+            "required": [
+                "PlaceholderId"
+            ]
+        },
+        "Placeholder": {
+            "type": "object",
+            "description": "A placeholder is an item used to stand-in for a real item",
+            "properties": {
+                "PlaceholderId": {
+                    "description": "PKey - Placeholder Id - key to an instance of a placeholder entry",
+                    "type": "string",
+                    "examples": [
+                        "22222222-5717-4562-b3fc-2c963f66afa6"
+                    ],
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "element1": {
+                    "description": "Example Element 1",
+                    "type": "string",
+                    "examples": [
+                        "00000000-5717-4562-b3fc-2c963f66afa6"
+                    ],
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "element2": {
+                    "description": "Example Element 2",
+                    "type": "string",
+                    "examples": [
+                        "example text"
+                    ]
+                }
+            }
+        },
+        "PlaceholderList": {
+            "type": "array",
+            "description": "Placeholder List",
+            "items": { "$ref": "#/definitions/Placeholder" }
+        }
+    }
+}

@@ -1,0 +1,1393 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Simple Objects",
+    "description": "The JSON reused objects",
+    "type": "object",
+    "definitions": {
+        "ElementString": {
+            "description": "An element that adopts the string format",
+            "type": "string"
+        },
+        "ElementNumber": {
+            "description": "An element that adopts the number format",
+            "type": "number"
+        },
+        "ElementDate": {
+            "description": "An element that adopts the date format",
+            "type": "string",
+            "format": "date"
+        },
+        "ElementTime": {
+            "description": "An element that adopts the time format",
+            "type": "string"
+        },
+        "ElementDateTime": {
+            "description": "An element that adopts the date/time format",
+            "type": "string",
+            "format": "date-time"
+        },
+        "ElementInteger": {
+            "description": "An element that adopts the integer format",
+            "type": "string",
+            "format": "integer"
+        },
+        "ElementBoolean": {
+            "description": "ENUM[true,false] An element that adopts boolean like format",
+            "type": "string"
+        },
+        "ElementClosedEnum": {
+            "description": "An element that adopts closed enumerations",
+            "type": "string"
+        },
+        "ElementOpenEnum": {
+            "description": "An element that adopts the open and hybrid enumerations",
+            "type": "string"
+        },
+        "ClearValue": {
+            "description": "ENUM[true,false] The clear attribute conveys to the provider to clear the element data value",
+            "type": "string"
+        },
+        "Restriction": {
+            "description": "ENUM[NoAccess,NoAccessPartial,ReadWrite,ReadWritePartial,ReadOnly,ReadOnlyPart,Hid] Describes the level of restrictions that can exist at a parent and/or child node",
+            "type": "string",
+            "default": "ReadWrite"
+        },
+        "SearchType": {
+            "description": "ENUM[Exact,StartsWith,EndsWith,Contains,ContainsAll] The search type element used as an attribute for elements. The search type conveys to the service provider the type of search expression for search message filters",
+            "type": "string"
+        },
+        "MaskValue": {
+            "description": "The service providers masked value for a clear text element",
+            "type": "string"
+        },
+        "OverrideInstitutionId": {
+            "description": "Describes the Institution Identifier or Bank Number/Location used to override the Institution Id found in an API path.",
+            "type": "string"
+        },
+        "AuditUserId": {
+            "description": "This is the User Id which the consumer would like written to the audit as performing the requested service. It will vary but could be down to the user id. It will not be use to authenticate however just audit.",
+            "type": "string"
+        },
+        "AuditDeviceId": {
+            "description": "This is the device Id which the consumer would like written to the audit as performing the requested service. It will vary but could be down to the user id.",
+            "type": "string"
+        },
+        "MessageId": {
+            "description": "An identification of the message to be able to trace the request and response of a message from the third party gateway, internal gateway, and service provider",
+            "type": "string"
+        },
+        "InstitutionRoutingId": {
+            "description": "A financial institution entity will utilize the routing transit or ABA nine (9) digit.  Zeros must be provided for a complete routing and transit number.",
+            "type": "string"
+        },
+        "InstitutionId": {
+            "description": "The identification given to an entity / institution.  The URL utilizes this Id for routing.  A financial Institution might opt to utilize their routing and transit number",
+            "type": "string"
+        },
+        "InstitutionEnvironment": {
+            "description": "OPENENUM[PROD] An identification provided by the consumer that defines the environment in which the institution is operating. The value PROD is the default for production",
+            "type": "string"
+        },
+        "BusinessCorrelationId": {
+            "description": "The correlation identification as related to business functions and activities",
+            "type": "string"
+        },
+        "FaultOverride": {
+            "description": "ENUM[true,false] Determines if all faults should be overridden",
+            "type": "string"
+        },
+        "FaultOverrideList": {
+            "description": "A comma separated list of faults to consider to override",
+            "type": "string"
+        },
+        "WorkflowCorrelationId": {
+            "description": "The correlation identification as related to workflow functions and activities",
+            "type": "string"
+        },
+        "AuthenticationUserCredential": {
+            "description": "Authentication of the end User Credentials in the form of a JSON Web Token (JWT).",
+            "type": "string"
+        },
+        "AuthenticationProductCredential": {
+            "description": "Authentication of the Consumer Product Credentials in the form of a JSON Web Token (JWT).",
+            "type": "string"
+        },
+        "RequestRecord": {
+            "description": "The number of records requested by a consumer",
+            "type": "integer"
+        },
+        "NextOffset": {
+            "description": "The next offset is the start position of the read pointer for pagination ",
+            "type": "string"
+        },
+        "Offset": {
+            "description": "The offset is the start position of the read pointer for pagination ",
+            "type": "string"
+        },
+        "Total": {
+            "description": "The total number of records requested for pagination",
+            "type": "integer"
+        },
+        "Results": {
+            "description": "The number of records sent for pagination",
+            "type": "integer"
+        },
+        "Element": {
+            "description": "The named element",
+            "type": "string"
+        },
+        "MessageCode": {
+            "description": "The code assigned to a providers statuses",
+            "type": "string"
+        },
+        "MessageCategory": {
+            "description": "ENUM[Error,Fault,Warning,Overridden] The category assigned to a providers message statuses",
+            "type": "string"
+        },
+        "MessageDescription": {
+            "description": "The description related to the status code in a human readable format",
+            "type": "string"
+        },
+        "MessageElement": {
+            "description": "When an Error or Fault occurs this optional element will contain the element which is causing the condition",
+            "type": "string"
+        },
+        "MessageElementValue": {
+            "description": "When an Error or Fault occurs this optional element will contain the value of the element which is causing the condition",
+            "type": "string"
+        },
+        "MessageLocation": {
+            "description": "This is typically the program that generated the status condition",
+            "type": "string"
+        },
+        "MessageSource": {
+            "description": "The source of the response to a message.  This would represent the service provider that carry out the business service for the message",
+            "type": "string"
+        },
+        "Messages": {
+            "description": "ENUM(true,false) An indicator that is part of the HTTP response header that conveys if the response package contains faults/warnings.",
+            "type": "string"
+        },
+        "LogLevel": {
+            "description": "ENUM[Error,Warning,Trace,Info,Debug,Fatal] The category of the log message",
+            "type": "string"
+        },
+        "LogCategory": {
+            "description": "ENUM[Application,Security,System] The category of the log message",
+            "type": "string"
+        },
+        "LogMessage": {
+            "description": "The actual text information or the message to be logged",
+            "type": "string"
+        },
+        "EventDateTime": {
+            "description": "The date when the event occurred expressed in ISO 8601 format (yyyy-mm-ddThh:mm:ss:fffff+/-hh.mm).",
+            "type": "string",
+            "format": "datetime"
+        },
+        "ServerTimeZone": {
+            "description": "The world wide recognized time zone abbreviations that represents the location of the server. https://greenwichmeantime.com/time-zone/abbreviations/",
+            "type": "string"
+        },
+        "ClientTimeZone": {
+            "description": "The world wide recognized time zone abbreviations that represents the location of the client. https://greenwichmeantime.com/time-zone/abbreviations/",
+            "type": "string"
+        },
+        "ProcessId": {
+            "description": "Identifies the process for a consumer application that has created the logging message",
+            "type": "string"
+        },
+        "ThreadId": {
+            "description": "An element when the Consumer Product is executed in a multi-threaded environment",
+            "type": "string"
+        },
+        "CorrelationId": {
+            "description": "An identification provided by the consumer the correlates a group of messages",
+            "type": "string"
+        },
+        "LogProductEnvironment": {
+            "description": "Hybrid Enumeration - An identification provided by the consumer that defines the environment a product is operating. The value PRODUCTION is the default",
+            "type": "string"
+        },
+        "ProductVersion": {
+            "description": "Release version of product in accord with Enterprise Versioning Standard.  The naming convention is YEAR.POINT.COMPATIBILITY.PATCH/BUILD.  Whereas YEAR is the the year the product version is released; POINT includes new or updated feature/function, bug fixes always beginning at 0 within a year; COMPATIBILITY is an ever increasing value value from this point forward typically incremented when breaking changes are included in a product release; PATCH/BUILD is a new build of software.",
+            "type": "string"
+        },
+        "IPAddress": {
+            "description": "The IP address of a device",
+            "type": "string"
+        },
+        "ProductName": {
+            "description": "The string value related to a product.",
+            "type": "string"
+        },
+        "ApplicationName": {
+            "description": "The string value related to a specific application.  This does not represent the product but identifies the application within a product",
+            "type": "string"
+        },
+        "ConsumerName": {
+            "description": "The name given to a consumer",
+            "type": "string"
+        },
+        "TransactionReceiptId": {
+            "description": "The identifier as related to a successful transaction",
+            "type": "string"
+        },
+        "AccountId": {
+            "description": "An identifier as related to a specific account",
+            "type": "string"
+        },
+        "AccountType": {
+            "description": "OPENENUM[Deposit,Savings,Loan,TimeDeposit] (Hybrid Enumeration) The type of account as related to a wire",
+            "type": "string"
+        },
+        "WireAccountType": {
+            "description": "OPENENUM[Deposit,Savings,Loan,TimeDeposit,GeneralLedger,CreditLine] A hybrid enumeration for the type of account as related to a wire",
+            "type": "string"
+        },
+        "WireTransactionDescription": {
+            "description": "A human readable description for a specific wire transaction",
+            "type": "string"
+        },
+        "CustomerId": {
+            "description": "An identifier assigned to a customer",
+            "type": "string"
+        },
+        "WireTransactionType": {
+            "description": "ENUM[Incoming,Outgoing] Identifies the type of wire transaction",
+            "type": "string"
+        },
+        "WireAmount": {
+            "description": "Wire transaction amount",
+            "type": "number"
+        },
+        "WireFeeType": {
+            "description": "ENUM[WireFee,Counter,WireFeeCounter]Describes how the wire customer should be charged for the wire",
+            "type": "string"
+        },
+        "WireReceiveFinancialInstitutionRoutingId": {
+            "description": "The routing identifier for the receiving financial institution for a wire",
+            "type": "string"
+        },
+        "WireReceiveFinancialInstitutionName": {
+            "description": "The name of the receiving financial institution for a wire",
+            "type": "string"
+        },
+        "WireSendFinancialInstitutionRoutingId": {
+            "description": "The routing identifier for the sending financial institution for a wire",
+            "type": "string"
+        },
+        "WireSendFinancialInstitutionName": {
+            "description": "The name of the sending financial institution for a wire",
+            "type": "string"
+        },
+        "WireChargeType": {
+            "description": "ENUM[Sender,Beneficiary,Originator,BeneficiaryOriginator] Defines the entity that is being charged for a wire",
+            "type": "string"
+        },
+        "WireChargeOrder": {
+            "description": "The order of the charges for a specific wire",
+            "type": "number"
+        },
+        "WireChargeAmount": {
+            "description": "The amount of the charges for a specific wire",
+            "type": "number"
+        },
+        "WireOriginatorIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,SwiftId,TaxId,Passport,DriverLicense,AlienRegistration,CorporateId,Oth]Identifies the type of originator identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireOriginatorId": {
+            "description": "The originator identifer used for a wire",
+            "type": "string"
+        },
+        "WireBeneficiaryIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,SwiftId,TaxId,Passport,DriverLicense,AlienRegistration,CorporateId,Oth]Identifies the type of beneficiary identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireBeneficiaryId": {
+            "description": "The identifier / GUID as related to a Wire Beneficiary",
+            "type": "string"
+        },
+        "CommonName": {
+            "description": "The common name which typically is constructed of the First, Middle, and Last Name",
+            "type": "string"
+        },
+        "FirstName": {
+            "description": "First Name",
+            "type": "string"
+        },
+        "MiddleName": {
+            "description": "Middle Name",
+            "type": "string"
+        },
+        "LastName": {
+            "description": "Last Name",
+            "type": "string"
+        },
+        "StreetAddress": {
+            "description": "Street Address",
+            "type": "string"
+        },
+        "City": {
+            "description": "City",
+            "type": "string"
+        },
+        "StateProvince": {
+            "description": "The US state code in accord with ISO 3166-2 or international province name",
+            "type": "string"
+        },
+        "CountryType": {
+            "description": "The international country code in accord with ISO 3166",
+            "type": "string"
+        },
+        "PostalCode": {
+            "description": "Postal or Zip code",
+            "type": "string"
+        },
+        "WireReference": {
+            "description": "Wire reference for an end to end identification",
+            "type": "string"
+        },
+        "WireStatus": {
+            "description": "ENUM[Draft,Cancel,Completed,Error,Pending] Status of the wire",
+            "type": "string"
+        },
+        "WireApprovalState": {
+            "description": "ENUM[Pending,Requested,Approved,Fail,NA] Status of the wire approval",
+            "type": "string"
+        },
+        "WireInstructedAmount": {
+            "description": "The instruction amount for a specific wire",
+            "type": "number"
+        },
+        "WireIntermediaryFinancialInstitutionIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,Oth,BIC]Identifies the type of intermediary financial institution identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireIntermediaryFinancialInstitutionId": {
+            "description": "The identifier of the intermediary financial institution used for a wire",
+            "type": "string"
+        },
+        "WireIntermediaryFinancialInstitutionName": {
+            "description": "The name of the intermediary financial institution for a wire",
+            "type": "string"
+        },
+        "WireBeneficiaryFinancialInstitutionIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,Oth,BIC]Identifies the type of beneficiary financial institution identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireBeneficiaryFinancialInstitutionId": {
+            "description": "The identifier of the beneficiary financial institution used for a wire",
+            "type": "string"
+        },
+        "WireBeneficiaryFinancialInstitutionName": {
+            "description": "The name of the beneficiary financial institution for a wire",
+            "type": "string"
+        },
+        "WireOriginatorFinancialInstitutionIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,Oth,BIC]Identifies the type of originator financial institution identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireOriginatorFinancialInstitutionId": {
+            "description": "The identifier of the originator financial institution used for a wire",
+            "type": "string"
+        },
+        "WireOriginatorFinancialInstitutionName": {
+            "description": "The name of the originator financial institution for a wire",
+            "type": "string"
+        },
+        "WireInstructionFinancialInstitutionIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,Oth,BIC]Identifies the type of instructing financial institution identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireInstructionFinancialInstitutionId": {
+            "description": "The identifier of the instructing financial institution used for a wire",
+            "type": "string"
+        },
+        "WireInstructionFinancialInstitutionName": {
+            "description": "The name of the instructing financial institution for a wire",
+            "type": "string"
+        },
+        "Remark": {
+            "description": "Freeform remarks",
+            "type": "string"
+        },
+        "WireRemarkType": {
+            "description": "ENUM[FinancialInstitutionToFinancialInstitution,OriginatorToBeneficiary]The type of remark category",
+            "type": "string"
+        },
+        "WireCreateDate": {
+            "description": "The date a wire was created",
+            "type": "string",
+            "format": "date"
+        },
+        "WireEffectiveDate": {
+            "description": "The effective date of a wire",
+            "type": "string",
+            "format": "date"
+        },
+        "AvailableBalanceCalculationCode": {
+            "description": "Open enumeration of the code that determines the process used to calculate an available balance",
+            "type": "string"
+        },
+        "WireCompanyId": {
+            "description": "The identifier assigned to a wire company",
+            "type": "string"
+        },
+        "EmployeeId": {
+            "description": "The identifier assigned to an employee",
+            "type": "string"
+        },
+        "EmployeeName": {
+            "description": "An employees name",
+            "type": "string"
+        },
+        "WireCompanyVerificationId": {
+            "description": "The wire company's identifier for a verifier for the company's wire",
+            "type": "string"
+        },
+        "WireCompanyVerificationName": {
+            "description": "The name of the  wire company's verifier for the company's wire",
+            "type": "string"
+        },
+        "TaxId": {
+            "description": "The tax identifier",
+            "type": "string"
+        },
+        "OfficerCode": {
+            "description": "Open enumeration of the code assigned to a financial institutions officer",
+            "type": "string"
+        },
+        "WireFee": {
+            "description": "The fee charge amount for a wire",
+            "type": "number"
+        },
+        "WireType": {
+            "description": "ENUM[FinancialInstitution,FRB,ForeignTransfer]The type of wire specific to domestic wires",
+            "type": "string"
+        },
+        "WireSubType": {
+            "description": "ENUM[Standard,ReturnRequest,PriorDayReturnRequest,Return,PriorDayReturn,DrawDownRequest,DrawDownTransfer,DrawDownFail,Service]The sub-type of wire specific to domestic wires",
+            "type": "string"
+        },
+        "WireFunctionType": {
+            "description": "ENUM[BTR,CTR,CKS,CTP,DEP,DRB,DRC,FFR,FFS,SVC,DRW]The business purpose of the wire specific to domestic wires whose enumeration is defined by FED",
+            "type": "string"
+        },
+        "WireSourceType": {
+            "description": "ENUM[FinancialInstitution,Internet,DirectLine,TreasuryManagement,ThirdParty,CompanyFinancialInstitutionClerk]Identifies the source of the wire request",
+            "type": "string"
+        },
+        "WireSourceId": {
+            "description": "An identifier provided by a wire source unique to the actual wire identifier",
+            "type": "string"
+        },
+        "InternetFinancialInstitutionId": {
+            "description": "An identifier given to a financial institutions internet banking application user",
+            "type": "string"
+        },
+        "TitlePrefix": {
+            "description": "The prefix that might proceed a name for example Mr., Mrs., Dr.",
+            "type": "string"
+        },
+        "NameSuffix": {
+            "description": "The suffix that might follow a name for example Jr.",
+            "type": "string"
+        },
+        "LegalName": {
+            "description": "Used by entities like trusts, or businesses in the case where an individual is doing business as a company, or when the legal name is different than the ComName",
+            "type": "string"
+        },
+        "SalutationName": {
+            "description": "Used by entities like trusts, or businesses in the case where an individual is doing business as a company, or when the legal name is different than the ComName",
+            "type": "string"
+        },
+        "ProductCode": {
+            "description": "A open enumerated code assigned to a product",
+            "type": "string"
+        },
+        "ProductId": {
+            "description": "An identifier as related to a specific product",
+            "type": "string"
+        },
+        "ProductDescription": {
+            "description": "A description of a code assigned to a product",
+            "type": "string"
+        },
+        "BrandCode": {
+            "description": "A open enumerated code assigned to a financial institution brands",
+            "type": "string"
+        },
+        "BrandDescription": {
+            "description": "A description of a code assigned to a financial institution brands",
+            "type": "string"
+        },
+        "CustomerStatus": {
+            "description": "ENUM[Active,Dormant,Deceased,NoExist,NonCustomer]The status of a customer",
+            "type": "string"
+        },
+        "DataDictionaryName": {
+            "description": "The name of the data dictionary used for reporting",
+            "type": "string"
+        },
+        "DataDictionaryVersion": {
+            "description": "The dictionary version",
+            "type": "string"
+        },
+        "DataName": {
+            "description": "The name of a data element as part of a name / value pair",
+            "type": "string"
+        },
+        "DataValue": {
+            "description": "The value of a data element as part of a name / value pair",
+            "type": "string"
+        },
+        "Version": {
+            "description": "The version of any entity",
+            "type": "string"
+        },
+        "WireProcessStep": {
+            "description": "ENUM[New,OFAC,Fraud,DualControl,Initiate,Process] The type of wire status",
+            "type": "string"
+        },
+        "InternationalWireProcessStep": {
+            "description": "ENUM[New,OFAC,DualControl,Send,Process,FirstTransfer] The type of international wire status",
+            "type": "string"
+        },
+        "WireStatusState": {
+            "description": "ENUM[Pending,NextDay,Error,Ready,Incomplete,Suspect,NotSuspect,Passed,Required,ContactCustomer,NotRequired,NSF,Initiated,AutoInitiated,Complete,Acknowledged,Canceled,Return,NextDayReturn] The state as related to a process step. New[Pending,Ready] OFAC[Incomplete,Suspect,Error,NotSuspect,Passed] DualControl[Required,ContactCustomer,NotRequired,Passed] Initiate[NextDay,Ready,NSF,Error,Initiated,AutoInitiated] Process[Complete,Acknowledged,Canceled,Error,Return,NextDayReturn]",
+            "type": "string"
+        },
+        "InternationalWireStatusState": {
+            "description": "ENUM[Error,Ready,QuoteExpired,QuoteRequired,Passed,Suspect,NotSuspect,Incomplete,Required,NotRequired,ContactCustomer,Canceled,NSF,Complete,Acknowledged,Pending] The state as related to a process step. New[Error,Ready,QuoteExpired,QuoteRequired,Pending] OFAC[Passed,Suspect,NotSuspect,Incomplete,Error] DualControl[Passed,Required,NotRequired,ContactCustomer] Send[Error,QuoteExpired,NSF,Ready,Complete] Process[Error,Ready,Canceled,Complete,Acknowledged] FirstTransfer[Passed,Required,NotRequired]",
+            "type": "string"
+        },
+        "WireStatusChangeTimeDate": {
+            "description": "The Greenwich Mean time/date the wire status was changed, The date is expressed in ISO 8601 format (yyyy-mm-ddThh:mm:ss:fffff+/-hh.mm)",
+            "type": "string",
+            "format": "date-time"
+        },
+        "RestrictionObject": {
+            "description": "The object related to restrictions.  Could be an element or a path",
+            "type": "string"
+        },
+        "RestrictionType": {
+            "description": "ENUM[NoAccess,ReadWrite,ReadOnly,Hid] Describes the level of restrictions that can exist at a parent and/or child node",
+            "type": "string",
+            "default": "ReadWrite"
+        },
+        "CurrencyType": {
+            "description": "The ISO 4217 three character currency type.  USD is the default value",
+            "type": "string"
+        },
+        "Amount": {
+            "description": "Generic amount",
+            "type": "number"
+        },
+        "CurrencyExchangeRate": {
+            "description": "The exchange rate for the currency conversion",
+            "type": "string"
+        },
+        "DriverLicenseId": {
+            "description": "The identifier given to a person for their driver license",
+            "type": "string"
+        },
+        "WireNoticeType": {
+            "description": "ENUM[Email,Print,Fax,EmailPrint,None] Identifies the behavior for wire transaction notices",
+            "type": "string"
+        },
+        "WireAdviceCode": {
+            "description": "ENUM[LTR,PHN,TLX,WRE,HLD] Identifies the method used to send wire advice",
+            "type": "string"
+        },
+        "DataState": {
+            "description": "ENUM[Delete,Retain] Identifies the state of the data",
+            "type": "string"
+        },
+        "WireIMAD": {
+            "description": "The wire Input Message Accountability Data provided to an incoming wire",
+            "type": "string"
+        },
+        "WireOMAD": {
+            "description": "The wire Output Message Accountability Data provided to a outgoing wire",
+            "type": "string"
+        },
+        "AccountAnalysisTransactionCode": {
+            "description": "The code that represents the account analysis behavior for a specific transaction",
+            "type": "string"
+        },
+        "WirePaymentMethodDescription": {
+            "description": "Any additional information in regards to the method of payment to the beneficiary",
+            "type": "string"
+        },
+        "WireMessageId": {
+            "description": "The identifier given to a wire message",
+            "type": "string"
+        },
+        "WireProcessorModeType": {
+            "description": "ENUM[Production,Test] The mode of the wire transactions",
+            "type": "string"
+        },
+        "WireSequenceId": {
+            "description": "The sequence identifier given to a specific wire",
+            "type": "string"
+        },
+        "WireId": {
+            "description": "The identifier given to a specific wire transaction",
+            "type": "string"
+        },
+        "WirePaymentNotificationId": {
+            "description": "ENUM[0,1,2,3,4,5,6,7,8,9] The identifier indicates the type of payment notification service.  Enumeration is governed by FED {3620}",
+            "type": "string"
+        },
+        "EmailAddress": {
+            "description": "Electronic address",
+            "type": "string"
+        },
+        "PhoneNumber": {
+            "description": "The number assigned to a telephone",
+            "type": "string"
+        },
+        "FedReport": {
+            "description": "The package that delivers a report for FRB for FedLine",
+            "type": "string"
+        },
+        "CharactersPerLine": {
+            "description": "The number of characters per line to be considered by the consumer of the FRB Fed report",
+            "type": "number"
+        },
+        "LinesPerPage": {
+            "description": "The number of lines per page to be considered by the consumer of the FRB Fed report",
+            "type": "number"
+        },
+        "FedReportStatus": {
+            "description": "ENUM[Success,Fail] The status of the report from FRB",
+            "type": "string"
+        },
+        "FedReportType": {
+            "description": "ENUM[TerminalTotals,TerminalDetails,AccountBalance,ErrorsCode,Statement,LogicalTerminalTotal,Gap,OpenBalance,Other] The enumeration defines the report",
+            "type": "string"
+        },
+        "FedReportStatementDate": {
+            "description": "The date as related to a FRB Fed wire statement",
+            "type": "string",
+            "format": "date"
+        },
+        "FedTransactionPackage": {
+            "description": "The package that delivers a wire transaction from the FRB for FedLine",
+            "type": "string"
+        },
+        "FedTransactionType": {
+            "description": "ENUM[Incoming,Outgoing,Error] The type of fed wire transaction from the FRB for FedLine",
+            "type": "string"
+        },
+        "FRBApplicationId": {
+            "description": "The Id provided by the FRB for different applications",
+            "type": "string"
+        },
+        "FedProcessingStatus": {
+            "description": "The status given by Fed for an outgoing wire",
+            "type": "string"
+        },
+        "FedWireDuplicateStatus": {
+            "description": "The status given to a suspected duplicate wire",
+            "type": "string"
+        },
+        "FedWireCycleYear": {
+            "description": "The financial institutions outgoing/incoming cycle year relative to the OMAD/IMAD",
+            "type": "number"
+        },
+        "FedWireReceivingCycleYear": {
+            "description": "The receiving financial institutions cycle year relative to the OMAD/IMAD which could differ from the Fed Wire Cycle Year",
+            "type": "number"
+        },
+        "LogicalTerminalId": {
+            "description": "An identification given to a financial institution by the FRB for MQ messaging logical terminals identifier",
+            "type": "string"
+        },
+        "WireTemplateId": {
+            "description": "An identification given to a template created for a wire",
+            "type": "string"
+        },
+        "WireTemplateDescription": {
+            "description": "A free form description related to a wire template",
+            "type": "string"
+        },
+        "WireTemplateName": {
+            "description": "A name give to a wire template",
+            "type": "string"
+        },
+        "WireTemplateCreateUser": {
+            "description": "The user name of the individual that created a wire template",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireTemplateChangeUser": {
+            "description": "The user name of the individual that changed a wire template",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireTemplateCreateTimeDate": {
+            "description": "The Greenwich Mean time/date the wire template was created",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireTemplateChangeTimeDate": {
+            "description": "The Greenwich Mean time/date the wire template was changed",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireScheduleCreateUser": {
+            "description": "The user name of the individual that created a wire template schedule",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireScheduleChangeUser": {
+            "description": "The user name of the individual that changed a wire template schedule",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireScheduleCreateTimeDate": {
+            "description": "The Greenwich Mean time/date the wire template schedule was created",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireScheduleChangeTimeDate": {
+            "description": "The Greenwich Mean time/date the wire template schedule was changed",
+            "type": "string",
+            "format": "datetime"
+        },
+        "WireScheduleFirstDate": {
+            "description": "The Greenwich Mean date that represents the first date of the schedule transfer",
+            "type": "string",
+            "format": "date"
+        },
+        "WireScheduleNextDate": {
+            "description": "The Greenwich Mean date that represents the next date of the schedule transfer",
+            "type": "string",
+            "format": "date"
+        },
+        "WireScheduleExpireDate": {
+            "description": "The Greenwich Mean date that represents the expiration date of the schedule transfer",
+            "type": "string",
+            "format": "date"
+        },
+        "WireScheduleFrequency": {
+            "description": "The frequency of the schedule transfer",
+            "type": "number"
+        },
+        "WireScheduleFrequencyUnits": {
+            "description": "ENUM[Days,Months,Years,SemiMonthly,WeekSkipLast,WeekSkipFirst,BiWeekSkipLast,BiWeekSkipFirst] The units of frequency of the schedule transfer",
+            "type": "string"
+        },
+        "BranchCode": {
+            "description": "The code that represents the branch for a financial institution",
+            "type": "string"
+        },
+        "WireScheduleSemiMonthlyDay": {
+            "description": "The days of the month that a semi-monthly wire schedule activity should occur",
+            "type": "string"
+        },
+        "WireScheduleState": {
+            "description": "ENUM[Active,Expired,Suspended] The state of a wire schedule",
+            "type": "string"
+        },
+        "ResponseCode": {
+            "description": "The code related to message responses",
+            "type": "string"
+        },
+        "LogStore": {
+            "description": "The store that retains log entries",
+            "type": "string"
+        },
+        "LogKey": {
+            "description": "The key related to a log entry specific to the log store",
+            "type": "string",
+            "readOnly": true
+        },
+        "CostCenter": {
+            "description": "The cost center related to a specific account",
+            "type": "string"
+        },
+        "WireInPersonType": {
+            "description": "ENUM[true,false]Was the wire transaction initiated by a person?",
+            "type": "string"
+        },
+        "ForeignWireType": {
+            "description": "ENUM[true,false]Was the wire transaction for a foreign entity?",
+            "type": "string"
+        },
+        "SourceDestinationType": {
+            "description": "Open enumeration of the source destination of a transaction",
+            "type": "string"
+        },
+        "WireUserTemplateId": {
+            "description": "An identification provided by the user for a given wire template",
+            "type": "string"
+        },
+        "WireScheduleOccur": {
+            "description": "The number of occurrences for a wire schedule",
+            "type": "number"
+        },
+        "ServiceProviderName": {
+            "description": "ENUM[SilverLake,CIF2020,CoreDir,Passport,jXchange,iTalk,TimeTrack,Synergy,4Sight,Silhouette,Argo,NetTeller,iPay,BrdCst,EL,EWF,DirectLineWires,DirectLineIntlWires,ODI,TP_FISTBS,AlertCenter,Cruise,MFA,Synapsys,PmtProcSols,ENS,EPS,TP_IMM,OnBoardDep,OnBoardLn,YellowHammer,BSA,Vertex,Episys,TP_HylandOnBase,TP_CSPI,EEMS,JHAPayCenter,JHAEnterCRM,ERMS,TP_PSCU,TP_Symantec,TP_ProformanceInfoAccess,TP_TSys,ImageCenter,JackHenryWires]The name of the service providers for JXR",
+            "type": "string"
+        },
+        "CountryCallingCode": {
+            "description": "The telephone number prefixes for member countries or regions of the International Telecommunication Union (ITU)",
+            "type": "string"
+        },
+        "DocumentCollectionId": {
+            "description": "The identifier assigned to a collection of documents",
+            "type": "string"
+        },
+        "DocumentReferenceName": {
+            "description": "The reference name given to a document",
+            "type": "string"
+        },
+        "DocumentName": {
+            "description": "The document name",
+            "type": "string"
+        },
+        "DocumentAuxiliaryName": {
+            "description": "An auxiliary name given to a document typically a user defined free form text",
+            "type": "string"
+        },
+        "AttachmentName": {
+            "description": "The attachment name",
+            "type": "string"
+        },
+        "DocumentDescription": {
+            "description": "The human readable description of a document",
+            "type": "string"
+        },
+        "DocumentImage": {
+            "description": "The image of a document in base64 binary format",
+            "type": "string"
+        },
+        "DocumentPage": {
+            "description": "The integer that represents the page number of a document",
+            "type": "number"
+        },
+        "DocumentBoxName": {
+            "description": "The name of the bound box for embedded in a document",
+            "type": "number"
+        },
+        "LocationCoordinate": {
+            "description": "The coordinate locations for a box embedded in a document",
+            "type": "integer"
+        },
+        "LocationWidth": {
+            "description": "The width of a specific location embedded in a document",
+            "type": "integer"
+        },
+        "LocationHeight": {
+            "description": "The height of a specific location embedded in a document",
+            "type": "integer"
+        },
+        "DocumentBoxType": {
+            "description": "ENUM[Signature,Initial,Checkbox,DropDown,Textbox,Label]The type of document box embedded in a document",
+            "type": "string"
+        },
+        "PartyActionType": {
+            "description": "ENUM[View,Skip]The action that should be taken for a specific party within a document",
+            "type": "string"
+        },
+        "Name": {
+            "description": "The name specific to a name - value pair",
+            "type": "string"
+        },
+        "Value": {
+            "description": "The value specific to a name - value pair",
+            "type": "string"
+        },
+        "DocumentCollectionState": {
+            "description": "ENUM[Commit,Cancel,Archive]The state as related to a specific document collection",
+            "type": "string"
+        },
+        "DocumentCollectionURL": {
+            "description": "The URL specific to a document collection used to for local purposes",
+            "type": "string"
+        },
+        "URLExpirationSeconds": {
+            "description": "The number of seconds a document URL is available",
+            "type": "integer"
+        },
+        "DocumentId": {
+            "description": "The identifier given to a specific document within a document collection",
+            "type": "string"
+        },
+        "DocumentCategory": {
+            "description": "ENUM[Document,Attachment]The category of a document related to a specific document collection",
+            "type": "string"
+        },
+        "DocumentSignatureStatus": {
+            "description": "ENUM[Signed,Unsigned]The status of the signature related to a document",
+            "type": "string"
+        },
+        "DocumentSignatureType": {
+            "description": "ENUM[Local,Remote]The type of signature as related to a document",
+            "type": "string"
+        },
+        "DocumentCollectionStatus": {
+            "description": "ENUM[InProcess,RemoteSignaturePending,Deleted,Expired,CollectionExpired,CollectionAborted,CollectionDownloaded,Archived,NotFound,Completed,ImagingPending]The status of a document collection",
+            "type": "string"
+        },
+        "DocumentLength": {
+            "description": "The length of the document in bytes",
+            "type": "integer"
+        },
+        "DocumentCompleteTimeDate": {
+            "description": "The date/time a document has been completed / archived for all signatures expressed in ISO 8601 ",
+            "type": "string",
+            "format": "date-time"
+        },
+        "SignerURL": {
+            "description": "The URL specific to a document collection remote signers",
+            "type": "string"
+        },
+        "RemoteSignerPassword": {
+            "description": "The password assigned to a specific signer",
+            "type": "string"
+        },
+        "RemoteSignerAuthenticationType": {
+            "description": "ENUM[Email,Password,KBA,Phone,GovernmentId]The type of authentication used for a document collection remote signer",
+            "type": "string"
+        },
+        "RemoteSignerOrder": {
+            "description": "The identifer that provides the order of signing for the remote signers",
+            "type": "number"
+        },
+        "EmailSubject": {
+            "description": "The subject line for an email",
+            "type": "string"
+        },
+        "EmailContent": {
+            "description": "The content for an email",
+            "type": "string"
+        },
+        "RemoteCollectionStatus": {
+            "description": "ENUM[Complete,InProcess,Expired,Aborted] The status as related to the remote signing process for a document collection",
+            "type": "string"
+        },
+        "RemoteSignerStatus": {
+            "description": "ENUM[Signed,Completed,Archived,Expired,DocumentsPending,VerificationInProcess,Pending,PendingSignature,PendingApproval,ReviewPending,Hidden,Error,Unknown,Recalled,Aborted,Cancelled] The status specific to a signer as related to the remote signing process for a document collection",
+            "type": "string"
+        },
+        "RemoteSignerStatusDescription": {
+            "description": "The complete description for the remote signer status",
+            "type": "string"
+        },
+        "EmailTemplate": {
+            "description": "The template used for emails",
+            "type": "string"
+        },
+        "DocumentStyle": {
+            "description": "ENUM[Dynamic,Standard]The style type of the document",
+            "type": "string"
+        },
+        "DocumentDisplayType": {
+            "description": "ENUM[Signing,Standard]The timing/method of the document display to the end user",
+            "type": "string"
+        },
+        "DocumentArchive": {
+            "description": "ENUM[true,false]Should the document be archived?",
+            "type": "string"
+        },
+        "DocumentSecurityType": {
+            "description": "ENUM[Standard,Elevated]The level of security assigned to the document",
+            "type": "string"
+        },
+        "StatusChangeTimeDate": {
+            "description": "The date/time a document collection status change occurred",
+            "type": "string",
+            "format": "date-time"
+        },
+        "DocumentImaged": {
+            "description": "ENUM[true,false] Was the document used for imaging",
+            "type": "string"
+        },
+        "FlattenPDFType": {
+            "description": "ENUM[true,false] Flattened PDF type indicates these documents have no fields present",
+            "type": "string"
+        },
+        "WireScheduleType": {
+            "description": "ENUM[Reoccuring,NonReoccuring]Defines the type of Wire schedule used by the wire scheduler",
+            "type": "string"
+        },
+        "WireTemplateAllowEntity": {
+            "description": "The allowable entity as related to the wire template.",
+            "type": "string"
+        },
+        "RequestId": {
+            "description": "To support communications level correlation due to some responses only having header data, a round-trip identifier (GUID) will be sent on every call from the consumer and returned by the service provider (or intermediary) regardless of the final disposition of the request/message",
+            "type": "string"
+        },
+        "MessageFormat": {
+            "description": "ENUM[DOTNET-EXCEPTION,String]A string value that conveys the format of the [Message] content",
+            "type": "string"
+        },
+        "MessageType": {
+            "description": "ENUM[JSON.B64, XML.B64,String]A string value that conveys the tyoe of content for the [Message]",
+            "type": "string"
+        },
+        "WireReversalCycleTimeDate": {
+            "description": "The date/time that represents the reversal of a wire transaction",
+            "type": "string",
+            "format": "date-time"
+        },
+        "WireReversalSourceId": {
+            "description": "The identifier given to a reversal of a wire",
+            "type": "string"
+        },
+        "WireReversalSequenceNumber": {
+            "description": "The number given to a reversal of a wire",
+            "type": "string"
+        },
+        "AddendaLength": {
+            "description": "The length related to an unstructured addenda information",
+            "type": "integer"
+        },
+        "WireRemittanceOriginatorCode": {
+            "description": "The code given to a wire remittance originator",
+            "type": "string"
+        },
+        "WireRemittanceTransferRule": {
+            "description": "ENUM[true,false]Is the wire subject to remittance rules",
+            "type": "string"
+        },
+        "WireRemittanceOriginatorNumberIssuer": {
+            "description": "The issuer number given to a wire remittance originator",
+            "type": "string"
+        },
+        "WireLocalInstrumentCode": {
+            "description": "The local instrument code used to further distinguish the business purpose of a CTP wire message",
+            "type": "string"
+        },
+        "WireProprietaryCode": {
+            "description": "The wire proprietary code specifically used for wire local instrument code is of type PROP",
+            "type": "string"
+        },
+        "WirePrimaryRemittanceDocumentCode": {
+            "description": "The wire primary remittance document code is used to identify the document being paid as part of the {8400} tag statement",
+            "type": "string"
+        },
+        "WirePrimaryProprietaryDocumentCode": {
+            "description": "The wire primary proprietary document code is used to identify the type of document being paid as part of the {8400} tag statement",
+            "type": "string"
+        },
+        "WirePrimaryRemittanceDocumentId": {
+            "description": "The wire primary remittance document identifier for the document being paid as part of the {8400} tag statement",
+            "type": "string"
+        },
+        "WirePrimaryRemittanceDocumentIssuer": {
+            "description": "The wire primary remittance document issuer for the document being paid as part of the {8400} tag statement",
+            "type": "string"
+        },
+        "WireRemittanceDocumentTimeDate": {
+            "description": "The date/time that represents the document that is part of a wire remittance",
+            "type": "string",
+            "format": "date-time"
+        },
+        "WireRemittanceBeneficiaryIdCode": {
+            "description": "The code the type of beneficiary identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireRemittanceBeneficiaryIdType": {
+            "description": "ENUM[Organization, Private] The type of identification provided for beneficiary remittance",
+            "type": "string"
+        },
+        "WireRemittanceBeneficiaryIdIssuer": {
+            "description": "The entity that assigns the identification number for a wire remittance",
+            "type": "string"
+        },
+        "BirthDate": {
+            "description": "The date of birth",
+            "type": "string",
+            "format": "date"
+        },
+        "AddressType": {
+            "description": "ENUM[Postal, Business, Delivery, Home, Mail, PostBox] The type of address",
+            "type": "string"
+        },
+        "DepartmentName": {
+            "description": "The name of the department",
+            "type": "string"
+        },
+        "BuildingName": {
+            "description": "The name of the building",
+            "type": "string"
+        },
+        "BirthPlace": {
+            "description": "The place of an individual's birth",
+            "type": "string"
+        },
+        "WireAdjustmentReasonCode": {
+            "description": "The code that describes the reason for the wire adjustment",
+            "type": "string"
+        },
+        "WireAdjustmentDrCrType": {
+            "description": "ENUM[Credit,Debit] Used to indicate if the wire adjustment is a credit or debit amount",
+            "type": "string"
+        },
+        "WireRelatedRemittanceDeliveryMethod": {
+            "description": "The method used to deliver the remittance advice for wires",
+            "type": "string"
+        },
+        "DocumentGUID": {
+            "description": "The unique identifier given to a document or set of documents",
+            "type": "string"
+        },
+        "DocumentCabinet": {
+            "description": "The cabinet that a document is stored",
+            "type": "string"
+        },
+        "DocumentFileType": {
+            "description": "The type of a document (i.e., PDF, JPEG)",
+            "type": "string"
+        },
+        "DocumentAuthority": {
+            "description": "The authority assigned to a document which could be represented in any string values of 1-9",
+            "type": "string"
+        },
+        "DocumentInstitutionId": {
+            "description": "The identifier given to an institution using document storage systems",
+            "type": "string"
+        },
+        "DocumentFileName": {
+            "description": "The name given to a document file",
+            "type": "string"
+        },
+        "DocumentType": {
+            "description": "The human readable high level definition of the document as defined by a user ",
+            "type": "string"
+        },
+        "FileName": {
+            "description": "The file name",
+            "type": "string"
+        },
+        "FileType": {
+            "description": "The type of a uploaded file (i.e., PDF, JPEG)",
+            "type": "string"
+        },
+        "FileSize": {
+            "description": "The size of the files expressed in bytes",
+            "type": "integer"
+        },
+        "FileChunkSize": {
+            "description": "The chunk size for the named file expressed in bytes",
+            "type": "integer"
+        },
+        "FileChunkCount": {
+            "description": "The number of chunks to be expected",
+            "type": "integer"
+        },
+        "FileGUID": {
+            "description": "The GUID assigned to an uploaded file",
+            "type": "string"
+        },
+        "WireSwiftTag": {
+            "description": "The SWIFT tag statements specific to wires",
+            "type": "string"
+        },
+        "BeneficiaryType": {
+            "description": "ENUM[Business,Individual] The type of beneficiary",
+            "type": "string"
+        },
+        "BusinessCategory": {
+            "description": "The category as related to the type of business activity",
+            "type": "string"
+        },
+        "WirePaymentMethod": {
+            "description": "ENUM[Wire]The method to be used for a wire payment",
+            "type": "string"
+        },
+        "OFACStatusState": {
+            "description": "ENUM[Incomplete,Suspect,Error,NotSuspect,Passed]Identifies the preferred method for a value",
+            "type": "string"
+        },
+        "BeneficiaryStatus": {
+            "description": "ENUM[Active,InActive,Incomplete]Identifies the status as related to a beneficiary",
+            "type": "string"
+        },
+        "BeneficiaryPaymentTracker": {
+            "description": "ENUM[true,false]Indicates if a notification (email) alert is sent to the beneficiary whenever a payment is released",
+            "type": "string"
+        },
+        "ElementDisplayName": {
+            "description": "The recommended display name as related to the element name",
+            "type": "string"
+        },
+        "ElementRegEx": {
+            "description": "The recommended RegEx equation as related to a specific element",
+            "type": "string"
+        },
+        "ElementUIRequired": {
+            "description": "The named element is required to be presented in a UI",
+            "type": "string"
+        },
+        "ElementToolTip": {
+            "description": "The narrative that may be displayed in related to a specific element",
+            "type": "string"
+        },
+        "ElementDisplayFormatType": {
+            "description": "ENUM[TaxId,Phone,InternationalPhone]The recommended format that may be used in displaying a specific element",
+            "type": "string"
+        },
+        "ElementLineage": {
+            "description": "The element data life cycle that includes the data's origins and where it moves over time and describes what happens to data as it goes through different processes",
+            "type": "string"
+        },
+        "ElementDefaultValue": {
+            "description": "An element recommended default value",
+            "type": "string"
+        },
+        "ElementMinimumValue": {
+            "description": "The minimum value as related to an element",
+            "type": "string"
+        },
+        "ElementMaximumValue": {
+            "description": "The maximum value as related to an element",
+            "type": "string"
+        },
+        "ErrorMessage": {
+            "description": "The error messages as related to an element",
+            "type": "string"
+        },
+        "WireDisclosureIssueDate": {
+            "description": "The issuance date for wire disclosure",
+            "type": "string",
+            "format": "date"
+        },
+        "WireDisclosureAvailableDate": {
+            "description": "The available date for wire disclosure",
+            "type": "string",
+            "format": "date"
+        },
+        "WireDisclosureExpireTimeDate": {
+            "description": "The expiration time-date for wire disclosure. The expiration date is expressed in ISO 8601 format (yyyy-mm-ddThh:mm:ss:fffff+/-hh.mm)",
+            "type": "string",
+            "format": "date-time"
+        },
+        "WireDisclosureIssueTimeDate": {
+            "description": "The issuance time-date for wire disclosure. The expiration date is expressed in ISO 8601 format (yyyy-mm-ddThh:mm:ss:fffff+/-hh.mm)",
+            "type": "string",
+            "format": "date-time"
+        },
+        "WireDisclosureState": {
+            "description": "ENUM[New,Cancelled,Pre-Payment,Transacted] The state of the wire disclosure",
+            "type": "string"
+        },
+        "WireDisclosureContactType": {
+            "description": "ENUM[Email,In-Person,Phone] The method used for the contact",
+            "type": "string"
+        },
+        "WireDisclosureFormType": {
+            "description": "ENUM[A-30a,A-30b,A-30c,A-30d,A33,A31,A34,A32,A35] The type of wire disclosure form",
+            "type": "string"
+        },
+        "WireDisclosureConfirmationId": {
+            "description": "The identifier given as confirmation for a wire disclosure",
+            "type": "string"
+        },
+        "Id": {
+            "description": "A generic identifier",
+            "type": "string"
+        },
+        "WireReturnType": {
+            "description": "ENUM[true,false]Is the wire a return item",
+            "type": "string"
+        },
+        "WireFundSource": {
+            "description": "ENUM[Customer,NonCustomer,GeneralLedger]The funds considered to be the source of the transaction",
+            "type": "string"
+        },
+        "WireAmountEstimated": {
+            "description": "ENUM[true,false] Were the amounts estimated?",
+            "type": "string"
+        },
+        "WirePaymentPurpose": {
+            "description": "The purpose of the wire payment",
+            "type": "string"
+        },
+        "LanguageType": {
+            "description": "ENUM[eng,spa,ger,fre,pol,swe,ita,jpn,kor,por,zho,chi]The language as defined by ISO 639-2 Language code list (http://www.loc.gov/standards/iso639-2/php/code_list.php)",
+            "type": "string"
+        },
+        "WireOrderId": {
+            "description": "The identifier given to a wire order",
+            "type": "string"
+        },
+        "EventNumber": {
+            "description": "The Enterprise Event System defined number associated with a defined event in the Enterprise Event Dictionary",
+            "type": "integer"
+        },
+        "SystemId": {
+            "description": "This is the system id",
+            "type": "string"
+        },
+        "EventApplicationId": {
+            "description": "Identifies the application within a specific product that created the event",
+            "type": "string"
+        },
+        "WirePaymentMethodCode": {
+            "description": "A open enumerated code assigned to wire payments",
+            "type": "string"
+        },
+        "OriginatorType": {
+            "description": "ENUM[Business,Individual] The type of originator",
+            "type": "string"
+        },
+        "TransactionCode": {
+            "description": "The code that identifies the type of transaction",
+            "type": "string"
+        },
+        "WireDrawDownFinancialInstitutionIdType": {
+            "description": "ENUM[Bank,CHIPSPart,DepAcct,Fed,CHIPSId,Oth,BIC]Identifies the type of beneficiary financial institution identifer used for a wire whose enumeration is governed by FED",
+            "type": "string"
+        },
+        "WireDrawDownFinancialInstitutionId": {
+            "description": "The identifier of the beneficiary financial institution used for a wire",
+            "type": "string"
+        },
+        "DrawDownCreditFinancialInstitutionName": {
+            "description": "The financial insitution name as related to a drawdown credit",
+            "type": "string"
+        },
+        "AuditResourceId": {
+            "description": "The identifier related to the audit resource i.e., Account Identifier, Customer Identifier, Share Id, AppId, DeviceId",
+            "type": "string"
+        },
+        "AuditResourceType": {
+            "description": "The type of resource as related to the audit resource identifier",
+            "type": "string"
+        },
+        "AuditEventStatus": {
+            "description": "ENUM[Success,Failure,Unknown] The status of the audit event",
+            "type": "string"
+        },
+        "AuditEventAction": {
+            "description": "ENUM[Create,Delete,Modified,Start,Stop,Inquire] The type of action taken for the audit event",
+            "type": "string"
+        },
+        "ServiceName": {
+            "description": "The name of a service or procedure",
+            "type": "string"
+        },
+        "AuditEventId": {
+            "description": "An identifier given to a specific audit event",
+            "type": "string"
+        },
+        "AuditEventDateTime": {
+            "description": "The audit event date time stamp",
+            "type": "string",
+            "format": "date-time"
+        },
+        "RemittanceTransferRulesDateTime": {
+            "description": "The date time stamp as related to remittance transfer rules",
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}

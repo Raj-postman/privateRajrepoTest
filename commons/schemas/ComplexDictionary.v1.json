@@ -1,0 +1,296 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Complex Objects",
+    "description": "The JSON reused objects",
+    "type": "object",
+    "definitions": {
+        "MetaData": {
+            "description": "Metadata / Attributes for any elements within the complex object",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Element": {"$ref": "SimpleDictionary.v1.json#/definitions/Element"}
+                }
+            }
+        },
+        "ManagementVersion": {
+            "description": "The versions returned for the management services",
+            "type": "object",
+            "properties": {
+                "MessageStatuses": {"$ref": "#/definitions/MessageStatuses"},
+                "ProductVersion": {"$ref": "SimpleDictionary.v1.json#/definitions/ProductVersion"},
+                "InternalVersion": {"$ref": "SimpleDictionary.v1.json#/definitions/Version"}
+            }
+        },
+        "Header": {
+            "type": "object",
+            "properties": {
+                "AuditUserId": {"$ref": "SimpleDictionary.v1.json#/definitions/AuditUserId"},
+                "AuditDeviceId": {"$ref": "SimpleDictionary.v1.json#/definitions/AuditDeviceId"},
+                "InstitutionRoutingId": {"$ref": "SimpleDictionary.v1.json#/definitions/InstitutionRoutingId"},
+                "InstitutionEnvironment": {"$ref": "SimpleDictionary.v1.json#/definitions/InstitutionEnvironment"},
+                "MessageId": {
+                    "$ref": "SimpleDictionary.v1.json#/definitions/MessageId",
+                    "description": "This MsgId should match the identifier assigned in the HTTP header X-Request-ID"
+                },
+                "BusinessCorrelationId": {"$ref": "SimpleDictionary.v1.json#/definitions/BusinessCorrelationId"},
+                "WorkflowCorrelationId": {"$ref": "SimpleDictionary.v1.json#/definitions/WorkflowCorrelationId"},
+                "AuthenticationUserCredential": {"$ref": "SimpleDictionary.v1.json#/definitions/AuthenticationUserCredential"},
+                "AuthenticationProductCredential": {"$ref": "SimpleDictionary.v1.json#/definitions/AuthenticationProductCredential"},
+                "FaultOverride": {"$ref": "SimpleDictionary.v1.json#/definitions/FaultOverride"}
+            },
+            "required": [
+                "InstitutionRoutingId",
+                "MessageId",
+                "AuthenticationProductCredential"
+            ]
+        },
+        "ResponseHeader": {
+            "type": "object",
+            "properties": {
+                "MessageId": {
+                    "$ref": "SimpleDictionary.v1.json#/definitions/MessageId",
+                    "description": "This MsgId should match the identifier assigned in the HTTP header X-Request-ID"
+                },
+                "CorrelationId": {"$ref": "SimpleDictionary.v1.json#/definitions/CorrelationId"},
+                "Messages": {"$ref": "SimpleDictionary.v1.json#/definitions/Messages"},
+                "BusinessCorrelationId": {"$ref": "SimpleDictionary.v1.json#/definitions/BusinessCorrelationId"},
+                "WorkflowCorrelationId": {"$ref": "SimpleDictionary.v1.json#/definitions/WorkflowCorrelationId"},
+                "MessageSource": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageSource"}
+            },
+            "required": ["MsgId"]
+        },
+        "Paging": {
+            "type": "object",
+            "properties": {
+                "NextOffset": {"$ref": "SimpleDictionary.v1.json#/definitions/NextOffset"},
+                "Results": {"$ref": "SimpleDictionary.v1.json#/definitions/Results"},
+                "Total": {"$ref": "SimpleDictionary.v1.json#/definitions/Total"}
+            }
+        },
+        "MessageStatuses": {
+            "description": "The array of statuses as related to a message",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Code": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageCode"},
+                    "Category": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageCategory"},
+                    "Description": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageDescription"},
+                    "Element": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageElement"},
+                    "ElementValue": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageElementValue"},
+                    "Location": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageLocation"},
+                    "MessageSource": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageSource"}
+                },
+                "required": [
+                    "Code",
+                    "Category",
+                    "Description"
+                ]
+            }
+        },
+        "MessageStatus": {
+            "type": "object",
+            "description": "`MessageStatus` is required/expected for non 2xx responses.",
+            "properties": {
+                "ResponseCode": {"$ref": "SimpleDictionary.v1.json#/definitions/ResponseCode"},
+                "Description": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageDescription"},
+                "MessageSource": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageSource"},
+                "MessageSourceResponse": {"$ref": "#/definitions/MessageSourceResponse"},
+                "Details": {"$ref": "#/definitions/MessageDetails"},
+                "Logs": {"$ref": "#/definitions/Logs"}
+            }
+        },
+        "MessageDetails": {
+            "description": "The array of details as related to a fault response code",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Code": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageCode"},
+                    "Category": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageCategory"},
+                    "Description": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageDescription"},
+                    "Element": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageElement"},
+                    "ElementValue": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageElementValue"},
+                    "Location": {"$ref": "SimpleDictionary.v1.json#/definitions/MessageLocation"}
+                }
+            }
+        },
+        "Logs": {
+            "description": "The array of logs as related to a response code",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Store": {"$ref": "SimpleDictionary.v1.json#/definitions/LogStore"},
+                    "Key": {"$ref": "SimpleDictionary.v1.json#/definitions/LogKey"}
+                }
+            }
+        },
+        "PersonName": {
+            "type": "object",
+            "properties": {
+                "Common": {"$ref": "SimpleDictionary.v1.json#/definitions/CommonName"},
+                "First": {"$ref": "SimpleDictionary.v1.json#/definitions/FirstName"},
+                "Middle": {"$ref": "SimpleDictionary.v1.json#/definitions/MiddleName"},
+                "Last": {"$ref": "SimpleDictionary.v1.json#/definitions/LastName"},
+                "TitlePrefix": {"$ref": "SimpleDictionary.v1.json#/definitions/TitlePrefix"},
+                "Suffix": {"$ref": "SimpleDictionary.v1.json#/definitions/NameSuffix"},
+                "Legal": {"$ref": "SimpleDictionary.v1.json#/definitions/LegalName"},
+                "Salutation": {"$ref": "SimpleDictionary.v1.json#/definitions/SalutationName"}
+            }
+        },
+        "Address": {
+            "type": "object",
+            "properties": {
+                "Street1": {"$ref": "SimpleDictionary.v1.json#/definitions/StreetAddress"},
+                "Street2": {"$ref": "SimpleDictionary.v1.json#/definitions/StreetAddress"},
+                "Street3": {"$ref": "SimpleDictionary.v1.json#/definitions/StreetAddress"},
+                "City": {"$ref": "SimpleDictionary.v1.json#/definitions/City"},
+                "StateProvince": {"$ref": "SimpleDictionary.v1.json#/definitions/StateProvince"},
+                "CountryType": {"$ref": "SimpleDictionary.v1.json#/definitions/CountryType"},
+                "PostalCode": {"$ref": "SimpleDictionary.v1.json#/definitions/PostalCode"}
+            }
+        },
+        "MonetaryAmount": {
+            "type": "object",
+            "properties": {
+                "Amount": {"$ref": "SimpleDictionary.v1.json#/definitions/Amount"},
+                "CurrencyType": {"$ref": "SimpleDictionary.v1.json#/definitions/CurrencyType"}
+            }
+        },
+        "Restrictions": {
+            "type": "object",
+            "properties": {
+                "ReadOnly": {"$ref": "#/definitions/ReadOnly"},
+                "NoAccess": {"$ref": "#/definitions/NoAccess"},
+                "Hid": {"$ref": "#/definitions/Hid"}
+            }
+        },
+        "ReadOnly": {
+            "description": "A list of read only authorization for a user",
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "NoAccess": {
+            "description": "A list of no access authorization for a user",
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "Hid": {
+            "description": "A list of hidden items specific to a user",
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "NullElements": {
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "Remarks": {
+            "description": "An array of remarks",
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "C_Custom": {
+            "type": "object",
+            "properties": {}
+        },
+        "ETags": {
+            "description": "The array of ETags",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "string",
+                        "example": "yevt06hqq268"
+                    },
+                    "ETag": {
+                        "type": "string",
+                        "example": "FgEpAAAAAAA="
+                    }
+                }
+            }
+        },   
+        "MetadataResponse": {
+            "type": "object",
+            "properties": {
+                "MessageStatus": {"$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus"},
+                "Paging": {"$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"},       
+                "Metadata": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Data": {"$ref": "#/definitions/Data"}
+                        }
+                    }
+                }
+            }
+        },
+        "Data": {
+            "type": "object",
+            "properties": {
+                "Id": {"$ref": "SimpleDictionary.v1.json#/definitions/Element"},
+                "DisplayName": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementDisplayName"},
+                "RegEx": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementRegEx"},
+                "UIRequired": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementUIRequired"},
+                "ErrorMessage": {"$ref": "SimpleDictionary.v1.json#/definitions/ErrorMessage"},
+                "ToolTip": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementToolTip"},
+                "DisplayFormatType": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementDisplayFormatType"},
+                "Lineage": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementLineage"},
+                "DefaultValue": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementDefaultValue"},
+                "MinimumValue": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementMinimumValue"},
+                "MaximumValue": {"$ref": "SimpleDictionary.v1.json#/definitions/ElementMaximumValue"},
+                "Enumerations": {"$ref": "#/definitions/Enumerations"}
+            },
+            "required": ["Id"]
+        },
+        "Enumerations": {
+            "description": "An array of open enumerations",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {"$ref": "SimpleDictionary.v1.json#/definitions/Name"},
+                    "Value": {"$ref": "SimpleDictionary.v1.json#/definitions/Value"}
+                }
+            }
+        },
+        "FunctionsResponse": {
+            "type": "object",
+            "properties": {
+                "MessageStatus": {"$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus"},
+                "Functions": {"$ref": "#/definitions/Functions"}
+            }
+        },
+        "Functions": {
+            "description": "A listing of functions that are allowable for a user",
+            "type": "array",
+            "items": {"type": "string"}
+        },
+        "FileUploadRequest": {
+            "type": "object",
+            "properties": {
+                "FileName": {"$ref": "../../common/schemas/SimpleDictionary.v1.json#/definitions/FileName"},
+                "FileType": {"$ref": "../../common/schemas/SimpleDictionary.v1.json#/definitions/FileType"},
+                "FileSize": {"$ref": "../../common/schemas/SimpleDictionary.v1.json#/definitions/FileSize"}
+            },
+            "required": [
+                "FileName",
+                "FileSize"
+            ]
+        },
+        "FileUploadResponse": {
+            "type": "object",
+            "properties": {
+                "FileGUID": {"$ref": "../../common/schemas/SimpleDictionary.v1.json#/definitions/FileGUID"}
+            }
+        },
+        "MessageSourceResponse": {
+            "type": "object",
+            "additionalProperties": true
+        }
+    }
+}
