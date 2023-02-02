@@ -1,0 +1,109 @@
+{
+    "output-file": "jh-ims-ent-api.v1.yaml",
+    "api-version": "v1",
+    "api-title": "Identity Management Services",
+    "api-description": "Identity Management Services API",
+    "api-contact-name": "Duane Kelley",
+    "api-contact-email": "DLKelley@jackhenry.com",
+    "product": "jh-identitymanagement",
+    "resources": [
+        {
+            "resource-url-path": "",
+            "resource": "AdminConfigurations",
+            "api-resource-key": "AdminConfigurationId",
+            "methods": [
+                "create",
+                "list",
+                "inquire",
+                "replace",
+                "delete"
+            ]
+        },
+        {
+            "resource-url-path": "",
+            "resource": "users",
+            "api-resource-key": "UserUPN",
+            "methods": [
+                "list",
+                "inquire",
+                "search"
+            ]
+        },
+        {
+            "resource-url-path": "users/{UserUPN}",
+            "resource": "claims",
+            "api-resource-key": "ClaimsId",
+            "methods": [
+                "list"
+            ]
+        },
+        {
+            "resource-url-path": "users/{UserUPN}",
+            "resource": "groups",
+            "api-resource-key": "GroupDistinguishedName",
+            "methods": [
+                "list",
+                "inquire"
+            ]
+        },
+        {
+            "resource-url-path": "",
+            "resource": "groups",
+            "api-resource-key": "GroupDistinguishedName",
+            "methods": [
+                "list",
+                "inquire"
+            ]
+        },
+        {
+            "resource-url-path": "",
+            "resource": "tenants",
+            "api-resource-key": "TenantId",
+            "methods": [
+                "create",
+                "list",
+                "inquire",
+                "replace",
+                "delete",
+                "search"
+            ]
+        },
+        {
+            "resource-url-path": "tenants/{TenantId}",
+            "resource": "claims",
+            "api-resource-key": "TenantClaimId",
+            "methods": [
+                "create",
+                "list",
+                "inquire",
+                "replace",
+                "delete"
+            ]
+        },
+        {
+            "resource-url-path": "tenants/{TenantId}/users/{UserUPN}",
+            "resource": "claims",
+            "api-resource-key": "TenantUserClaimId",
+            "methods": [
+                "create",
+                "list",
+                "inquire",
+                "replace",
+                "delete"
+            ]
+        },
+        {
+            "resource-url-path": "",
+            "resource": "identitystores",
+            "api-resource-key": "IdentityStoreId",
+            "methods": [
+                "create",
+                "list",
+                "inquire",
+                "replace",
+                "delete",
+                "search"
+            ]
+        }
+    ]
+}

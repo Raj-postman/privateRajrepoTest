@@ -1,0 +1,27 @@
+{
+    "output-file": "jh-ims-auth-api.v1.yaml",
+    "api-version": "v1",
+    "api-title": "Identity Management Services",
+    "api-description": "Identity Management Services API",
+    "api-contact-name": "Duane Kelley",
+    "api-contact-email": "DLKelley@jackhenry.com",
+    "product": "jh-identitymanagement",
+    "resources": [
+        {
+            "resource-url-path": "",
+            "resource": "authentications",
+            "api-resource-key": "UserId",
+            "methods": [
+                "create"
+            ]
+        },
+        {
+            "resource-url-path": "",
+            "resource": "claims",
+            "api-resource-key": "UserId",
+            "methods": [
+                "create"
+            ]
+        }
+    ]
+}

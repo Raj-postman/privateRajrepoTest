@@ -1,0 +1,739 @@
+# Auto-Generated: 12/08/2022 19:36:03
+openapi: 3.0.0
+x-jh:
+  publishing:
+    type: Integration                                 # [Integration], Product 
+    stage: dev                                        # [dev], rc, prod
+    isPublic: False                                   # [False], True ... Public Production APIs will also be published to jackhenry.dev
+    group: EI&S                                       # Group name or High Order Product Name [Common] ... examples: Origin, EI&S, CPS, Fraud,
+    name: Identity Management - Authentication        # Friendly name used in navigation. 25 chars or less please. [info.title]
+    docURL: none                                      # Fully formed URL to a place where documentation exists. [none]
+info:
+  version: v1
+  title: Identity Management Services
+  description: Identity Management Services API
+  contact:
+    name: Duane Kelley
+    email: DLKelley@jackhenry.com
+security:
+  - BearerAuth: []
+paths:
+  '/v2/jh-identitymanagement/authentications':
+    post:
+      tags:
+        - Authentications API
+      description: Authentications `Create`
+      operationId: authentications-create
+      parameters:
+        # - $ref: '#/components/parameters/pInstitutionId'
+        # - $ref: '#/components/parameters/pInstUID'
+        # - $ref: '#/components/parameters/pProductId'
+        # - $ref: '#/components/parameters/pAuthorization'
+        # - $ref: '#/components/parameters/pDate'
+        # - $ref: '#/components/parameters/pContent-Type'
+        - $ref: '#/components/parameters/pX-Request-ID'
+        - $ref: '#/components/parameters/pX-Correlation-ID'
+        - $ref: '#/components/parameters/pX-AuditUserId'
+        - $ref: '#/components/parameters/pX-AuditDeviceId'
+        - $ref: '#/components/parameters/pX-BusinessCorrelationId'
+        - $ref: '#/components/parameters/pX-WorkflowCorrelationId'
+        #- $ref: '#/components/parameters/pX-AuthenticationUserCredential-optional'
+        - $ref: '#/components/parameters/pX-AuthenticationProductCredential'
+        - $ref: '#/components/parameters/pX-FaultOverride'
+        # - $ref: '#/components/parameters/pLanguage'
+        # -- Custom Parameters --
+      requestBody:
+        $ref: '#/components/requestBodies/AuthenticationsCreateRequest'
+      responses:
+        # '200':
+        #   description: 'OK<hr>
+        #     The HTTP 200 OK success status response code indicates that the request has succeeded. <br>A 200 response is cacheable by default.'
+        #   headers:
+        #     X-Request-ID:
+        #       $ref: '#/components/headers/pX-Request-ID'
+        #     X-Correlation-ID:
+        #       $ref: '#/components/headers/pX-Correlation-ID'
+        #     X-Messages:
+        #       $ref: '#/components/headers/pX-Messages'
+        #     X-BusinessCorrelationId:
+        #       $ref: '#/components/headers/pX-BusinessCorrelationId'
+        #     X-WorkflowCorrelationId:
+        #       $ref: '#/components/headers/pX-WorkflowCorrelationId'
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: '#/components/schemas/AuthenticationsCreateResponse'
+        '201':
+          description: 'Created<hr>
+            The HTTP 201 Created success status response code indicates that the request has succeeded and has led to the creation of a resource.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-Messages:
+              $ref: '#/components/headers/pX-Messages'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticationsCreateResponse'                
+        '204':
+          description: 'Created, No Content<hr>
+            There is no content to send for this request, but the headers may be useful.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+        '400':
+          description: 'Bad Request<hr>
+            The server could not understand the request due to invalid syntax.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-Messages:
+              $ref: '#/components/headers/pX-Messages'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageStatus'
+        '401':
+          description: 'Unauthorized<hr>
+            Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". 
+            That is, the client must authenticate itself to get the requested response.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '403':
+          description: 'Forbidden<hr>
+            The client does not have access rights to the content; that is, it is unauthorized, 
+            so the server is refusing to give the requested resource. Unlike 401, the clients identity is known to the server.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '404':
+          description: 'Not Found<hr>
+            The server can not find the requested resource. In an API, this can also mean that the endpoint is valid but 
+            the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence 
+            of a resource from an unauthorized client.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '413':
+          description: 'Request Too Large<hr>
+            Request entity is larger than limits defined by server.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '422':
+          description: 'Unprocessed<hr>
+            The request was well-formed but was unable to be followed due to semantic errors.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '500':
+          description: 'Generic Internal Error<hr>
+            The server has encountered a situation it doesnt know how to handle.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        default:
+          description: Generic Internal Error
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+  '/v2/jh-identitymanagement/claims':
+    post:
+      tags:
+        - Claims API
+      description: Claims `Create`
+      operationId: claims-create
+      parameters:
+        # - $ref: '#/components/parameters/pInstitutionId'
+        # - $ref: '#/components/parameters/pInstUID'
+        # - $ref: '#/components/parameters/pProductId'
+        # - $ref: '#/components/parameters/pAuthorization'
+        # - $ref: '#/components/parameters/pDate'
+        # - $ref: '#/components/parameters/pContent-Type'
+        - $ref: '#/components/parameters/pX-Request-ID'
+        - $ref: '#/components/parameters/pX-Correlation-ID'
+        - $ref: '#/components/parameters/pX-AuditUserId'
+        - $ref: '#/components/parameters/pX-AuditDeviceId'
+        - $ref: '#/components/parameters/pX-BusinessCorrelationId'
+        - $ref: '#/components/parameters/pX-WorkflowCorrelationId'
+        - $ref: '#/components/parameters/pX-AuthenticationUserCredential-required'
+        - $ref: '#/components/parameters/pX-AuthenticationProductCredential'
+        - $ref: '#/components/parameters/pX-FaultOverride'
+        # - $ref: '#/components/parameters/pLanguage'
+        # -- Custom Parameters --
+      requestBody:
+        $ref: '#/components/requestBodies/ClaimsCreateRequest'
+      responses:
+        # '200':
+        #   description: 'OK<hr>
+        #     The HTTP 200 OK success status response code indicates that the request has succeeded. <br>A 200 response is cacheable by default.'
+        #   headers:
+        #     X-Request-ID:
+        #       $ref: '#/components/headers/pX-Request-ID'
+        #     X-Correlation-ID:
+        #       $ref: '#/components/headers/pX-Correlation-ID'
+        #     X-Messages:
+        #       $ref: '#/components/headers/pX-Messages'
+        #     X-BusinessCorrelationId:
+        #       $ref: '#/components/headers/pX-BusinessCorrelationId'
+        #     X-WorkflowCorrelationId:
+        #       $ref: '#/components/headers/pX-WorkflowCorrelationId'
+        #   content:
+        #     application/json:
+        #       schema:
+        #         $ref: '#/components/schemas/ClaimsCreateResponse'
+        '201':
+          description: 'Created<hr>
+            The HTTP 201 Created success status response code indicates that the request has succeeded and has led to the creation of a resource.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-Messages:
+              $ref: '#/components/headers/pX-Messages'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimsCreateResponse'                
+        '204':
+          description: 'Created, No Content<hr>
+            There is no content to send for this request, but the headers may be useful.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+        '400':
+          description: 'Bad Request<hr>
+            The server could not understand the request due to invalid syntax.'
+          headers:
+            X-Request-ID:
+              $ref: '#/components/headers/pX-Request-ID'
+            X-Correlation-ID:
+              $ref: '#/components/headers/pX-Correlation-ID'
+            X-Messages:
+              $ref: '#/components/headers/pX-Messages'
+            X-BusinessCorrelationId:
+              $ref: '#/components/headers/pX-BusinessCorrelationId'
+            X-WorkflowCorrelationId:
+              $ref: '#/components/headers/pX-WorkflowCorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageStatus'
+        '401':
+          description: 'Unauthorized<hr>
+            Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". 
+            That is, the client must authenticate itself to get the requested response.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '403':
+          description: 'Forbidden<hr>
+            The client does not have access rights to the content; that is, it is unauthorized, 
+            so the server is refusing to give the requested resource. Unlike 401, the clients identity is known to the server.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '404':
+          description: 'Not Found<hr>
+            The server can not find the requested resource. In an API, this can also mean that the endpoint is valid but 
+            the resource itself does not exist. Servers may also send this response instead of 403 to hide the existence 
+            of a resource from an unauthorized client.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '413':
+          description: 'Request Too Large<hr>
+            Request entity is larger than limits defined by server.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '422':
+          description: 'Unprocessed<hr>
+            The request was well-formed but was unable to be followed due to semantic errors.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        '500':
+          description: 'Generic Internal Error<hr>
+            The server has encountered a situation it doesnt know how to handle.'
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+        default:
+          description: Generic Internal Error
+          headers:
+            X-Request-ID:
+              description: Returned X-Request-ID
+              schema:
+                type: string
+tags:
+  - name: Authentications API
+    description: Authentications OpenAPI Definitions
+  - name: Claims API
+    description: Claims OpenAPI Definitions
+servers:
+  - url: 'http:/jx-r.jhacorp.com/api'
+    description: Corporate Test Server
+  - url: 'http:/127.0.0.1/api'
+    description: 'Local Mock Server #1'
+  - url: 'http:/127.0.0.1:8080/api'
+    description: 'Local Mock Server #2'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: "http"
+      description: "OpenIDConnect JWT Token"
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    # pInstUID:
+    #   name: InstUID
+    #   in: path
+    #   description: "The Universal Identification given to an entity / institution.  The URL utilizes this Id for routing."
+    #   required: true
+    #   schema:
+    #     type: string
+    #     format: uuid
+    # pInstitutionId:
+    #   name: InstitutionId
+    #   in: path
+    #   description: "The identification given to an entity / institution.  The URL utilizes this Id for routing.  A financial Institution 
+    #     might opt to utilize their routing and transit number"
+    #   required: true
+    #   schema:
+    #     type: string
+    #     default: '000000000'
+    # pEnvironmentId:
+    #   name: EnvironmentId
+    #   in: path
+    #   description: 'Institution Environment.  This code identifies the processing environment for which the message is intended.  
+    #     Generally, the environment will be PRODuction, however, various other environments may exist.  TESTing environments are common.'
+    #   required: true
+    #   schema:
+    #     type: string
+    #     default: PROD
+    pProductId:
+      name: ProductId
+      in: path
+      description: 'Product Identifier.  This code identifies the Product for which the message is intended.  
+        Generally, the Product Id will be in the form of Vendor-Product. However, various other Product Ids may exist. <br>Example:`jha-productname`'
+      required: true
+      schema:
+        type: string
+        example: jha-productname
+    pResourceId:
+      name: ResourceId
+      in: path
+      description: The identifier to be used as a key to the resource
+      required: true
+      schema:
+        type: string
+        example: 123e4567-e89b-12d3-a456-426655440000 
+    pOffset:
+      name: Offset
+      in: query
+      description: 'The service offset provided by the API provider
+        <br>Example: `.../resource?Offset=value`'
+      schema:
+        type: string
+        default: '0'
+    pCount:
+      name: Count
+      in: query
+      description: 'The count of records requested
+        <br>Example: `.../resource?Count=value`'
+      schema:
+        type: string
+        default: '0'
+    pStatusType:
+      name: StatusType
+      in: path
+      description: The type of status
+      required: true
+      schema:
+        type: string
+        default: ""
+    pFields:
+      name: Fields
+      in: query
+      description: 'The query of fields, comma separated, for get operations.
+        <br>Example: `.../resource?Fields=field1,field2,field3`'
+        # Optional Implementation` - API providers will remove references to this definition for APIs that will not implement the FIELDS behavior.
+      schema:
+        type: string
+        example: "field1,field2,field3"
+    pETags:
+      name: ETags
+      in: query
+      description: 'Indicating if a collection of ETags should be returned for GET:List operations.  Default is false.
+        <br>Example: `.../resource?ETags=true`'
+        # Optional Implementation` - API providers will remove references to this definition for APIs that will not implement the ETags behavior.
+      schema:
+        type: boolean
+        example: "false"
+    pRestrictions:
+      name: Restrictions
+      in: query
+      description: 'The query of restrictions
+        <br>Example: `.../resource?Restrictions=value`'
+      schema:
+        type: boolean
+        example: true
+    pSort:
+      name: Sort
+      in: query
+      description: 'Indicating the elements used for sorting and direction [asc, desc], comma separated, for operations that retun a list.
+        <br>Example: `.../resource?Sort=field1:direction,field2:direction,field3:direction`'
+      # Optional Implementation` - API providers will remove references to this definition for APIs that will not implement the SORT behavior.
+      schema:
+        type: string   
+    pFilter-Basic:
+      name: Filter
+      in: query
+      description: 'Indicating the elements used for filtering and the match value for each element.  Filtering reduces the rows returned and therefore 
+        Basic Filtering is appropriate to services that return an array of resources.  The default operation is "equal" and the default collation rule is "ignore case"
+        <br>Example: `.../resource?filter=address.state:mo,address.county:green)`'
+        # Optional Implementation - API providers will remove references to this definition for APIs that will not implement the BASIC FILTER behavior.
+        # Documentation of what fields/elements will be accepted for each API as filter items will be added to the API description.
+      schema:
+        type: string 
+    pFilter:
+      name: Filter
+      in: query
+      description: 'Indicating the elements used for filtering, the operation (type of evaluation), and the value used for evaluation for each element.  Filtering reduces the rows returned and therefore 
+        Filtering is appropriate to services that return an array of resources.
+        <br>Format of filter object is `element:operator:value`
+        <br>Operators: eq - equal, ne - not equal, lt - less than, gt - greater than, in - in list, con - contains, gte - greater than or equal, lte - less than or equal, sw - starts with, ew - ends with
+        <br>Collation Rule: i - ignore case (add rule to front of operation: ieq, ine, ilt, igt, iin, icon, igte, ilte, isw, iew)
+        <br>Example: `.../resource?filter=address.state:eq:MO,address.county:eq:Green,customer.lastname:isw:hamm`'
+        # Optional Implementation - API providers will remove references to this definition for APIs that will not implement the BASIC FILTER behavior.
+        # Documentation of what fields/elements will be accepted for each API as filter items will be added to the API description.
+      schema:
+        type: string 
+    pAuthorization:
+      name: Authorization
+      in: header
+      description: "JWT Token. Represents Callers Authentication Token in the form of a JWT generated by a OAuth 2.0 Identity Provider 
+        and conforms to the OpenID Connect specification.  See [Security section] for other details. 
+        <br>Example `Authorization: bearer <GeneratedOidcJwt>`"
+      required: true
+      schema:
+        type: string
+        example: bearer <GeneratedOidcJwt>
+    pDate: 
+      in: header
+      name: Date
+      description: 'Standard http header element for date and time. HTTP headers are represented as RFC 7231 Full Dates. 
+        <br>Example `Date: Wed, 21 Oct 2015 07:28:00 GMT`'
+      required: true
+      schema:
+        type: string
+        example: Wed, 21 Oct 2015 07:28:00 GMT
+    pContent-Type:
+      name: Content-Type
+      description: 'The Content-Type entity header is used to indicate the media type of the resource. In responses, a Content-Type header 
+        tells the client what the content type of the returned content actually is. In requests, (such as POST or PUT), the client tells the 
+        server what type of data is actually sent.'
+      in: header
+      required: true
+      schema:
+        type: string
+        default: application/json
+    pETag:
+      name: ETag
+      in: header
+      description: 'Entity tag used for web cache validation.  It provides a mechanism to cache unchanged resources.'
+      schema:
+        type: string
+    pIf-Match:
+      name: If-Match
+      in: header
+      description: 'Enables optimistic updating with ETag'
+      schema:
+        type: string
+    pIf-Modified-Since:
+      name: If-Modified-Since
+      in: header
+      description: 'The If-Modified-Since request HTTP header makes the request conditional: the server will send back the requested resource, 
+        with a 200 status, only if it has been last modified after the given date. If the request has not been modified since, the response will 
+        be a 304 without any body; the Last-Modified response header of a previous request will contain the date of last modification. 
+        <br>Example: `<day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT`'
+      schema:
+        type: string
+        example: "<day-name>, <day> <month> <year> <hour>:<minute>:<second> GMT"
+    pX-Request-ID:
+      name: X-Request-ID
+      in: header
+      description: 'To support communications level correlation due to some responses only having header data, a round-trip identifier (GUID) 
+        will be sent on every call from the consumer and returned by the service provider (or intermediary) regardless of the final disposition of the request/message.'
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 123e4567-e89b-12d3-a456-426655440000
+    pX-AuditUserId:
+      name: X-AuditUserId
+      in: header
+      description: 'This is the User Id which the consumer would like written to the audit as performing the requested service. It will vary but 
+        could be down to the user id. It will not be use to authenticate, only audit information.'
+      schema:
+        type: string
+        example: InigoMontoya
+    pX-AuditDeviceId:
+      name: X-AuditDeviceId
+      in: header
+      description: This is the device Id which the consumer would like written to the audit as performing the requested service. It will vary but could be down to the machine id or address.
+      schema:
+        type: string
+        example: 192.168.0.101
+    pX-BusinessCorrelationId:
+      name: X-BusinessCorrelationId
+      in: header
+      description: The correlation identification as related to business functions and  activities.  Generally expected to be a GUID.
+      schema:
+        type: string
+        example: 123e4567-e89b-12d3-a456-426655440000
+    pX-WorkflowCorrelationId:
+      name: X-WorkflowCorrelationId
+      in: header
+      description: The correlation identification as related to workflow functions and activities. Generally expected to be a GUID.
+      schema:
+        type: string
+        example: 123e4567-e89b-12d3-a456-426655440000
+    pX-AuthenticationUserCredential-optional:
+      name: X-AuthenticationUserCredential
+      in: header
+      description: 'Authentication of the end-user (person at keyboard) Credentials in the form of a JSON Web Token (JWT). <br>Format is `<type> <token>`. Type default is jwt.
+        <br>Example `X-AuthenticationUserCredential: jwt <GeneratedOidcJwt>` 
+        <br>Example `X-AuthenticationUserCredential: saml <Generatedsaml>`'
+      schema:
+        type: string
+        example: jwt:<GeneratedOidcJwt>
+    pX-AuthenticationUserCredential-required:
+      name: X-AuthenticationUserCredential
+      in: header
+      description: 'Authentication of the end-user (person at keyboard) Credentials in the form of a JSON Web Token (JWT). <br>Format is `<type> <token>`. Type default is jwt.
+        <br>Example `X-AuthenticationUserCredential: jwt <GeneratedOidcJwt>` 
+        <br>Example `X-AuthenticationUserCredential: saml <Generatedsaml>`'
+      required: true
+      schema:
+        type: string
+        example: jwt:<GeneratedOidcJwt>
+    pX-AuthenticationProductCredential:
+      name: X-AuthenticationProductCredential
+      in: header
+      description: 'Authentication of the Consumer Product Credentials in the form of a JSON Web Token (JWT).  Same as "Authorization" 
+        jwt unless the message is sent "on-behalf-of" this consumer product. <br>Format is `<type> <token>`. Type default is jwt.
+        <br>Example `X-AuthenticationProductCredential: jwt <GeneratedOidcJwt>` 
+        <br>Example `X-AuthenticationProductCredential: saml <Generatedsaml>`'
+      required: true
+      schema:
+        type: string
+        example: jwt:<GeneratedOidcJwt>
+    pX-Correlation-ID:
+      name: X-Correlation-ID
+      in: header
+      required: true
+      description: Correlation ID for communication-based multi-hop message correlation
+      schema:
+        type: string
+    pX-Messages:
+      name: X-Messages
+      in: header
+      description: Indicating messages/faults/errors returned
+      schema:
+        type: boolean
+        default: false
+    pX-Version:
+      name: X-Version
+      in: header
+      description: Indicating version for the management status service
+      schema:
+        type: string
+        default: false
+    pX-FaultOverride:
+      name: X-FaultOverride
+      in: header
+      description: Determines if all faults should be override
+      schema:
+        type: string
+        default: false
+    pContentRange:
+      name: Content-Range
+      in: header
+      description: "Http header element that indicates where, in a full body message, a partial message belongs.
+                <br> Examples:
+                <br>`Content-Range: <unit> <range-start>-<range-end>/<size>`
+                <br>`Content-Range: <unit> <range-start>-<range-end>/*`
+                <br>`Content-Range: <unit> */<size>`"
+      required: true
+      example: "bytes 0-1000/*"
+      schema:
+        type: string
+        example: bytes 0-1000/*
+    pLanguage:
+      name: Language
+      in: query
+      description: 'Language of request
+        <br>Example: `.../resource?Language=value`'
+      schema:
+        type: string
+        default: en
+        enum: [en, sp, fr, ch]
+    #- - - Custom Parameters - - - 
+    pUserId:
+      name: UserId
+      in: path
+      description: 'Custom URL key: UserId'
+      required: true
+      schema:
+        type: string
+  headers:
+    pETag:
+      description: 'Entity tag used for web cache validation.  It provides a mechanism to cache unchanged resources.'
+      schema:
+        type: string
+        default: application/json
+    pIf-Match:
+      description: 'Enables optimistic updating with ETag'
+      schema:
+        type: string
+        default: application/json
+    pX-Request-ID:
+      description: 'To support communications level correlation due to some responses only having header data, a round-trip identifier 
+        (GUID) will be sent on every call from the consumer and returned by the service provider (or intermediary) regardless of the final 
+        disposition of the request/message.'
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 123e4567-e89b-12d3-a456-426655440000
+    pX-AuditUserId:
+      description: 'This is the User Id which the consumer would like written to the audit as performing the requested service. It will 
+        vary but could be down to the user id. It will not be use to authenticate, only audit information.'
+      schema:
+        type: string
+    pX-AuditDeviceId:
+      description: 'This is the device Id which the consumer would like written to the audit as performing the requested service. It will 
+        vary but could be down to the machine id.'
+      schema:
+        type: string
+    pX-BusinessCorrelationId:
+      description: The correlation identification as related to business functions and  activities.  Generally expected to be a GUID.
+      schema:
+        type: string
+    pX-WorkflowCorrelationId:
+      description: The correlation identification as related to workflow functions and activities. Generally expected to be a GUID.
+      schema:
+        type: string
+    pX-AuthenticationUserCredential-optional:
+      description: 'Authentication of the end-user (person at keyboard) Credentials in the form of a JSON Web Token (JWT). 
+        <br>Example `X-AuthenticationUserCredential: jwt:<GeneratedOidcJwt>` 
+        <br>Example `X-AuthenticationUserCredential: saml:<Generatedsaml>`'
+      schema:
+        type: string
+    pX-AuthenticationProductCredential:
+      description: 'Authentication of the Consumer Product Credentials in the form of a JSON Web Token (JWT).  Same as "Authorization" 
+        jwt unless the message is sent "on-behalf-of" this consumer product.  
+        <br>Example `X-AuthenticationProductCredential: jwt:<GeneratedOidcJwt>` 
+        <br>Example `X-AuthenticationProductCredential: saml:<Generatedsaml>`'
+      required: true
+      schema:
+        type: string
+    pX-Correlation-ID:
+      description: Correlation ID for communication-based multi-hop message correlation
+      schema:
+        type: string
+    pX-Messages:
+      description: Indicating messages/faults/errors returned
+      schema:
+        type: boolean
+        default: false
+    pX-Version:
+      description: Indicating version for the management status service
+      schema:
+        type: string
+        default: false
+    pX-FaultOverride:
+      description: Determines if all faults should be override
+      schema:
+        type: string
+        default: false
+  requestBodies:
+    AuthenticationsCreateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AuthenticationsCreateRequest'
+    ClaimsCreateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ClaimsCreateRequest'
+  schemas:
+    AuthenticationsCreateRequest:
+      $ref: './schemas/jh-ims-auth-api.v1.json#/properties/AuthenticationsCreateRequest'
+    AuthenticationsCreateResponse:
+      $ref: './schemas/jh-ims-auth-api.v1.json#/properties/AuthenticationsCreateResponse'
+    ClaimsCreateRequest:
+      $ref: './schemas/jh-ims-auth-api.v1.json#/properties/ClaimsCreateRequest'
+    ClaimsCreateResponse:
+      $ref: './schemas/jh-ims-auth-api.v1.json#/properties/ClaimsCreateResponse'
+    MessageStatus:
+      $ref: '../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus'
