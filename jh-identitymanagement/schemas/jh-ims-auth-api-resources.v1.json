@@ -1,0 +1,319 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "V2 GenericTitle",
+    "description": "GenericDescription",
+    "type": "object",
+    "properties": {},
+    "definitions": {
+        "MessageStatus": {
+            "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus"
+        },
+        "PlaceHolderId": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                }
+            },
+            "required": [
+                "PlaceHolderId"
+            ]
+        },
+        "PlaceHolder": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "placeholder_element": {
+                    "description": "placeholder value",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "placeholder_element"
+            ]
+        },
+        "PlaceHolderList": {
+            "type": "array",
+            "description": "PlaceHolder List",
+            "items": {
+                "$ref": "#/definitions/PlaceHolder"
+            }
+        },
+        "AuthenticationRequest": {
+            "type": "object",
+            "properties": {
+                "InstitutionUniversalId": {
+                    "description": "Institution Universal Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                },
+                "InstitutionRoutingId": {
+                    "description": "Institution Routing Id",
+                    "type": "string"
+                },
+                "InstitutionEnvironmentId": {
+                    "description": "Institution Environment Id",
+                    "type": "string"
+                },
+                "InternetDomain": {
+                    "description": "Internet Domain",
+                    "type": "string"
+                },
+                "ADDomain": {
+                    "description": "AD Domain",
+                    "type": "string"
+                },
+                "UserId": {
+                    "description": "User Identification",
+                    "type": "string"
+                },
+                "UserPwd": {
+                    "description": "User Password",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserId",
+                "UserPwd"
+            ]
+        },
+        "AuthenticationResponse": {
+            "type": "object",
+            "properties": {
+                "UserValidation": {
+                    "description": "JWT containing validation material - UserId, Validation(Success/Fail), EvaluationDateTime",
+                    "type": "string"
+                },
+                "UserUniqueId": {
+                    "description": "User Unique Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "UserId": {
+                    "description": "User Id",
+                    "type": "string"
+                },
+                "FirstName": {
+                    "description": "First Name",
+                    "type": "string"
+                },
+                "LastName": {
+                    "description": "Last Name",
+                    "type": "string"
+                },
+                "EMailAddress": {
+                    "description": "EMail Address",
+                    "type": "string"
+                },
+                "CommonName": {
+                    "description": "Common Name",
+                    "type": "string"
+                },
+                "EmployeeTitle": {
+                    "description": "Employee Title",
+                    "type": "string"
+                },
+                "InstitutionRoutingId": {
+                    "description": "Institution Routing Id",
+                    "type": "string"
+                },
+                "DepartmentDescription": {
+                    "description": "Department Description",
+                    "type": "string"
+                }
+            }
+        },
+
+        "UserClaimsRequest": {
+            "type": "object",
+            "properties": {
+                "InstitutionUniversalId": {
+                    "description": "Institution Universal Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                },
+                "InstitutionRoutingId": {
+                    "description": "Institution Routing Id",
+                    "type": "string"
+                },
+                "InstitutionEnvironmentId": {
+                    "description": "Institution Environment Id",
+                    "type": "string"
+                },
+                "InternetDomain": {
+                    "description": "Internet Domain",
+                    "type": "string"
+                },
+                "ADDomain": {
+                    "description": "AD Domain",
+                    "type": "string"
+                },
+                "UserId": {
+                    "description": "User Identification",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserId"
+            ]
+        },
+        "UserClaimsResponse": {
+            "type": "object",
+            "properties": {
+                "UserUniqueId": {
+                    "description": "User Unique Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                },
+                "UserId": {
+                    "description": "User Id",
+                    "type": "string"
+                },
+                "Claims": {
+                    "description": "Collection of Claims",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Type": {
+                                "description": "Claim Type",
+                                "type": "string",
+                                "example": "ENUM[blank=std, std, custom"
+                            },
+                            "Name": {
+                                "description": "Claim Name or URI",
+                                "type": "string",
+                                "example": "role, given_name, first_name, name, ..."
+                            },
+                            "Value": {
+                                "description": "Claim Value",
+                                "type": "string",
+                                "example": "Tellers"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+ 
+
+
+
+
+
+
+
+        "PlaceHolderListResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderInquireResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                },
+                "Restrictions": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Restrictions"
+                }
+            }
+        },
+        "PlaceHolderReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "NullElements": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/NullElements"
+                }
+            }
+        },
+        "PlaceHolderReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderUpdateRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                }
+            }
+        },
+        "PlaceHolderUpdateResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderSearchRequest": {
+            "$ref": "#/definitions/PlaceHolder",
+            "required": []
+        },
+        "PlaceHolderSearchResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        }
+    }
+}

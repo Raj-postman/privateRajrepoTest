@@ -1,0 +1,868 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "V2 GenericTitle",
+    "description": "GenericDescription",
+    "type": "object",
+    "properties": {
+        "PlaceHolderId": {
+            "$ref": "#/definitions/PlaceHolderId"
+        },
+        "PlaceHolder": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderList": {
+            "$ref": "#/definitions/PlaceHolderList"
+        },
+        "AdminConfigurationsCreateRequest": {
+            "$ref": "#/definitions/AdminConfigurationsCreateRequest"
+        },
+        "AdminConfigurationsCreateResponse": {
+            "$ref": "#/definitions/AdminConfigurationsCreateResponse"
+        },
+        "AdminConfigurationsListResponse": {
+            "$ref": "#/definitions/AdminConfigurationsListResponse"
+        },
+        "AdminConfigurationsInquireResponse": {
+            "$ref": "#/definitions/AdminConfigurationsInquireResponse"
+        },
+        "AdminConfigurationsReplaceRequest": {
+            "$ref": "#/definitions/AdminConfigurationsReplaceRequest"
+        },
+        "AdminConfigurationsReplaceResponse": {
+            "$ref": "#/definitions/AdminConfigurationsReplaceResponse"
+        },
+        "AdminConfigurationsDeleteResponse": {
+            "$ref": "#/definitions/AdminConfigurationsDeleteResponse"
+        },
+        "UsersListResponse": {
+            "$ref": "#/definitions/UsersListResponse"
+        },
+        "UsersInquireResponse": {
+            "$ref": "#/definitions/UsersInquireResponse"
+        },
+        "UsersSearchRequest": {
+            "$ref": "#/definitions/UsersSearchRequest"
+        },
+        "UsersSearchResponse": {
+            "$ref": "#/definitions/UsersSearchResponse"
+        },
+        "UsersClaimsListResponse": {
+            "$ref": "#/definitions/UsersClaimsListResponse"
+        },
+        "UsersGroupsListResponse": {
+            "$ref": "#/definitions/UsersGroupsListResponse"
+        },
+        "UsersGroupsInquireResponse": {
+            "$ref": "#/definitions/UsersGroupsInquireResponse"
+        },
+        "GroupsListResponse": {
+            "$ref": "#/definitions/GroupsListResponse"
+        },
+        "GroupsInquireResponse": {
+            "$ref": "#/definitions/GroupsInquireResponse"
+        },
+        "TenantsCreateRequest": {
+            "$ref": "#/definitions/TenantsCreateRequest"
+        },
+        "TenantsCreateResponse": {
+            "$ref": "#/definitions/TenantsCreateResponse"
+        },
+        "TenantsListResponse": {
+            "$ref": "#/definitions/TenantsListResponse"
+        },
+        "TenantsInquireResponse": {
+            "$ref": "#/definitions/TenantsInquireResponse"
+        },
+        "TenantsReplaceRequest": {
+            "$ref": "#/definitions/TenantsReplaceRequest"
+        },
+        "TenantsReplaceResponse": {
+            "$ref": "#/definitions/TenantsReplaceResponse"
+        },
+        "TenantsDeleteResponse": {
+            "$ref": "#/definitions/TenantsDeleteResponse"
+        },
+        "TenantsSearchRequest": {
+            "$ref": "#/definitions/TenantsSearchRequest"
+        },
+        "TenantsSearchResponse": {
+            "$ref": "#/definitions/TenantsSearchResponse"
+        },
+        "TenantsClaimsCreateRequest": {
+            "$ref": "#/definitions/TenantsClaimsCreateRequest"
+        },
+        "TenantsClaimsCreateResponse": {
+            "$ref": "#/definitions/TenantsClaimsCreateResponse"
+        },
+        "TenantsClaimsListResponse": {
+            "$ref": "#/definitions/TenantsClaimsListResponse"
+        },
+        "TenantsClaimsInquireResponse": {
+            "$ref": "#/definitions/TenantsClaimsInquireResponse"
+        },
+        "TenantsClaimsReplaceRequest": {
+            "$ref": "#/definitions/TenantsClaimsReplaceRequest"
+        },
+        "TenantsClaimsReplaceResponse": {
+            "$ref": "#/definitions/TenantsClaimsReplaceResponse"
+        },
+        "TenantsClaimsDeleteResponse": {
+            "$ref": "#/definitions/TenantsClaimsDeleteResponse"
+        },
+        "TenantsUsersClaimsCreateRequest": {
+            "$ref": "#/definitions/TenantsUsersClaimsCreateRequest"
+        },
+        "TenantsUsersClaimsCreateResponse": {
+            "$ref": "#/definitions/TenantsUsersClaimsCreateResponse"
+        },
+        "TenantsUsersClaimsListResponse": {
+            "$ref": "#/definitions/TenantsUsersClaimsListResponse"
+        },
+        "TenantsUsersClaimsInquireResponse": {
+            "$ref": "#/definitions/TenantsUsersClaimsInquireResponse"
+        },
+        "TenantsUsersClaimsReplaceRequest": {
+            "$ref": "#/definitions/TenantsUsersClaimsReplaceRequest"
+        },
+        "TenantsUsersClaimsReplaceResponse": {
+            "$ref": "#/definitions/TenantsUsersClaimsReplaceResponse"
+        },
+        "TenantsUsersClaimsDeleteResponse": {
+            "$ref": "#/definitions/TenantsUsersClaimsDeleteResponse"
+        },
+        "IdentityStoresCreateRequest": {
+            "$ref": "#/definitions/IdentityStoresCreateRequest"
+        },
+        "IdentityStoresCreateResponse": {
+            "$ref": "#/definitions/IdentityStoresCreateResponse"
+        },
+        "IdentityStoresListResponse": {
+            "$ref": "#/definitions/IdentityStoresListResponse"
+        },
+        "IdentityStoresInquireResponse": {
+            "$ref": "#/definitions/IdentityStoresInquireResponse"
+        },
+        "IdentityStoresReplaceRequest": {
+            "$ref": "#/definitions/IdentityStoresReplaceRequest"
+        },
+        "IdentityStoresReplaceResponse": {
+            "$ref": "#/definitions/IdentityStoresReplaceResponse"
+        },
+        "IdentityStoresDeleteResponse": {
+            "$ref": "#/definitions/IdentityStoresDeleteResponse"
+        },
+        "IdentityStoresSearchRequest": {
+            "$ref": "#/definitions/IdentityStoresSearchRequest"
+        },
+        "IdentityStoresSearchResponse": {
+            "$ref": "#/definitions/IdentityStoresSearchResponse"
+        },
+        "MessageStatus": {
+            "$ref": "#/definitions/MessageStatus"
+        }
+    },
+    "definitions": {
+        "MessageStatus": {
+            "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus"
+        },
+        "PlaceHolderId": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                }
+            },
+            "required": [
+                "PlaceHolderId"
+            ]
+        },
+        "PlaceHolder": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "placeholder_element": {
+                    "description": "placeholder value",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "placeholder_element"
+            ]
+        },
+        "PlaceHolderList": {
+            "type": "array",
+            "description": "PlaceHolder List",
+            "items": {
+                "$ref": "#/definitions/PlaceHolder"
+            }
+        },
+        "PlaceHolderCreateRequest": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderCreateResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderListResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderInquireResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                },
+                "Restrictions": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Restrictions"
+                }
+            }
+        },
+        "PlaceHolderReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                }
+            }
+        },
+        "PlaceHolderReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderUpdateRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "NullElements": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/NullElements"
+                }
+            }
+        },
+        "PlaceHolderUpdateResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderSearchRequest": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderSearchResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AdminConfigurationsCreateRequest": {
+            "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfiguration",
+            "required": ["AdminConfigurationName","AdminConfigurationMappings"]
+        },
+        "AdminConfigurationsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "AdminConfigurationId": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfigurationId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AdminConfigurationsListResponse": {
+            "type": "object",
+            "properties": {
+                "AdminConfigurations": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfigurationList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AdminConfigurationsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "AdminConfiguration": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfiguration"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AdminConfigurationsReplaceRequest": {
+            "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfiguration",
+            "required": ["AdminConfigurationId","AdminConfigurationName","AdminConfigurationMappings"]
+        },
+        "AdminConfigurationsReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "AdminConfigurationId": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfigurationId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AdminConfigurationsDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "AdminConfigurationId": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/AdminConfigurationId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersListResponse": {
+            "type": "object",
+            "properties": {
+                "Users": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/UserList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersInquireResponse": {
+            "type": "object",
+            "properties": {
+                "User": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/User"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersSearchRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserSearch"
+        },
+        "UsersSearchResponse": {
+            "type": "object",
+            "properties": {
+                "Users": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersClaimsListResponse": {
+            "type": "object",
+            "properties": {
+                "UserClaims": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/ClaimList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersGroupsListResponse": {
+            "type": "object",
+            "properties": {
+                "UserGroups": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/GroupList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "UsersGroupsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "UserGroup": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/Group"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "GroupsListResponse": {
+            "type": "object",
+            "properties": {
+                "Groups": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/GroupList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "GroupsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "Group": {
+                    "$ref": "./jh-ims-ent-api-resources.v1.json#/definitions/Group"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsCreateRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Tenant"
+        },
+        "TenantsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsListResponse": {
+            "type": "object",
+            "properties": {
+                "Tenants": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "Tenant": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Tenant"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "Tenant": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Tenant"
+                }
+            }
+        },
+        "TenantsReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsSearchRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantSearch"
+        },
+        "TenantsSearchResponse": {
+            "type": "object",
+            "properties": {
+                "Tenants": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsClaimsCreateRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+        },
+        "TenantsClaimsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "TenantClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsClaimsListResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "TenantClaims": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsClaimsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "TenantClaim": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsClaimsReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "TenantClaim": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+                }
+            }
+        },
+        "TenantsClaimsReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "TenantClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsClaimsDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "TenantClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsUsersClaimsCreateRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+        },
+        "TenantsUsersClaimsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "UserUPN": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserUPN"
+                },
+                "TenantUserClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsUsersClaimsListResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "UserUPN": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserUPN"
+                },
+                "TenantUserClaims": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsUsersClaimsInquireResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "UserUPN": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserUPN"
+                },
+                "TenantUserClaim": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsUsersClaimsReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "TenantUserClaim": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/Claim"
+                }
+            }
+        },
+        "TenantsUsersClaimsReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "UserUPN": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserUPN"
+                },
+                "TenantUserClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "TenantsUsersClaimsDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "TenantId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/TenantId"
+                },
+                "UserUPN": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/UserUPN"
+                },
+                "TenantUserClaimId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/ClaimId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "IdentityStoresCreateRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStore"
+        },
+        "IdentityStoresCreateResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStoreId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "IdentityStoresListResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStores": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "IdentityStoresInquireResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStore": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStore"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                },
+                "Restrictions": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Restrictions"
+                }
+            }
+        },
+        "IdentityStoresReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "IdentityStore": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStore"
+                }
+            }
+        },
+        "IdentityStoresReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStoreId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "IdentityStoresDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStoreId": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "IdentityStoresSearchRequest": {
+            "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreSearch"
+        },
+        "IdentityStoresSearchResponse": {
+            "type": "object",
+            "properties": {
+                "IdentityStores": {
+                    "$ref": "jh-ims-ent-api-resources.v1.json#/definitions/IdentityStoreList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        }
+    }
+}

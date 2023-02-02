@@ -1,0 +1,219 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "V2 GenericTitle",
+    "description": "GenericDescription",
+    "type": "object",
+    "properties": {
+        "PlaceHolderId": {
+            "$ref": "#/definitions/PlaceHolderId"
+        },
+        "PlaceHolder": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderList": {
+            "$ref": "#/definitions/PlaceHolderList"
+        },
+        "AuthenticationsCreateRequest": {
+            "$ref": "#/definitions/AuthenticationsCreateRequest"
+        },
+        "AuthenticationsCreateResponse": {
+            "$ref": "#/definitions/AuthenticationsCreateResponse"
+        },
+        "ClaimsCreateRequest": {
+            "$ref": "#/definitions/ClaimsCreateRequest"
+        },
+        "ClaimsCreateResponse": {
+            "$ref": "#/definitions/ClaimsCreateResponse"
+        },
+        "MessageStatus": {
+            "$ref": "#/definitions/MessageStatus"
+        }
+    },
+    "definitions": {
+        "MessageStatus": {
+            "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/MessageStatus"
+        },
+        "PlaceHolderId": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid"
+                }
+            },
+            "required": [
+                "PlaceHolderId"
+            ]
+        },
+        "PlaceHolder": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "description": "PKey - PlaceHolder Id",
+                    "type": "string",
+                    "example": "00000000-5717-4562-b3fc-2c963f66afa6",
+                    "format": "uuid",
+                    "readOnly": true
+                },
+                "placeholder_element": {
+                    "description": "placeholder value",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "placeholder_element"
+            ]
+        },
+        "PlaceHolderList": {
+            "type": "array",
+            "description": "PlaceHolder List",
+            "items": {
+                "$ref": "#/definitions/PlaceHolder"
+            }
+        },
+        "PlaceHolderCreateRequest": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderCreateResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderListResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "ETags": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/ETags"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderInquireResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                },
+                "Restrictions": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Restrictions"
+                }
+            }
+        },
+        "PlaceHolderReplaceRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                }
+            }
+        },
+        "PlaceHolderReplaceResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderUpdateRequest": {
+            "type": "object",
+            "properties": {
+                "PlaceHolder": {
+                    "$ref": "#/definitions/PlaceHolder"
+                },
+                "NullElements": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/NullElements"
+                }
+            }
+        },
+        "PlaceHolderUpdateResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderDeleteResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolderId": {
+                    "$ref": "#/definitions/PlaceHolderId"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "PlaceHolderSearchRequest": {
+            "$ref": "#/definitions/PlaceHolder"
+        },
+        "PlaceHolderSearchResponse": {
+            "type": "object",
+            "properties": {
+                "PlaceHolders": {
+                    "$ref": "#/definitions/PlaceHolderList"
+                },
+                "Paging": {
+                    "$ref": "../../common/schemas/ComplexDictionary.v1.json#/definitions/Paging"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "AuthenticationsCreateRequest": {
+            "$ref": "jh-ims-auth-api-resources.v1.json#/definitions/AuthenticationRequest"
+        },
+        "AuthenticationsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "Authentication": {
+                    "$ref": "jh-ims-auth-api-resources.v1.json#/definitions/AuthenticationResponse"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        },
+        "ClaimsCreateRequest": {
+            "$ref": "jh-ims-auth-api-resources.v1.json#/definitions/UserClaimsRequest"
+        },
+        "ClaimsCreateResponse": {
+            "type": "object",
+            "properties": {
+                "UserClaims": {
+                    "$ref": "jh-ims-auth-api-resources.v1.json#/definitions/UserClaimsResponse"
+                },
+                "MessageStatus": {
+                    "$ref": "#/definitions/MessageStatus"
+                }
+            }
+        }
+    }
+}
